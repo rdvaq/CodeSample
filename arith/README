@@ -1,5 +1,14 @@
 Partners: Matt Zhou (czhou06) and Violet McCabe (vmccab01)
 
+
+Overview:
+● An image compressor for PPM images. Employs bitpacking and machine arithmetic to compress a given ppm image. The compressed image is written to stdout.
+A decompressor is also made with the corresponding compression protocol, decompressed image also written to stdout.
+● Resulting compressed image is ¼ the size of the original image; Decompression maintains high image quality.
+● Usage:
+compression: ./40image -c [file_name]
+decompressions: ./40image -d [compressed_file_name]
+
 Architecture:
 - 40image.c
     Provided file containing main
