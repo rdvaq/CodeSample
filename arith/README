@@ -1,0 +1,81 @@
+Partners: Matt Zhou (czhou06) and Violet McCabe (vmccab01)
+
+Architecture:
+- 40image.c
+    Provided file containing main
+
+-compress40.c
+    File containing our compress40 and decompress40 functions. All helper 
+    functions from other files called here
+
+- a2plain.c & uarray2.c 
+    Past homework fiiles included for the A2Methods_UArray2 data types 
+
+- DCT.c & DCT.h 
+    Interface and implementation for all DCT conversion related functions.
+    The functions here are responsible for converting the CV values in the 
+    given uncompressed image to mean pb (mpb), mean pr (mpr), a, b, c, and d
+    values and the inverse conversion.
+    DCT.h is included in all files that use the Pnm_block struct defined here. 
+
+- CVRGB.c & CVRGB.h 
+    Interface and implementation for all CV to RGB conversions and related 
+    functions. The functions here are responsible for both converting the RGB
+    values in the given uncompressed image to y, pb, pr values and 
+    the inverse conversions. These functions are responsible for the following
+    steps: Floating Point Transformation, RGB to CV transformation, 
+    Inverse Floating Point Transformation, and CV to RGB transformation. 
+    CVRGB.h is included in all files that use the Pnm_CV struct defined here. 
+
+- bitprep.c & bitprep.h 
+    Interface and implementation for all functions that use Bitpacking 
+    functions. This header file is essentially bridging the gap between
+    Bitpacking.c /Bitpacking.h and our compression functions. The functions
+    here use Bitpacking functions to pack provided data and unpack codewords.
+
+- quantization.c & quantization.h 
+    Interface and implementation for all quantization and inverse 
+    quantization functions. 
+
+- reader.c & reader.h
+    Interface and implementation for custom read in and write out 
+    functions. readin reads in the codewords provided from compressed
+    image file and write out prints the codewords in big endian order.
+
+- bitpack.c
+    Implementation for bitpacking functions. Contains helper functions 
+    for right and left shifts, fit check fucntions, retrieval functions
+    (getu and gets), and new functions (news and newu).
+
+- ppmdiff.c
+    Implementation of ppmdiff as detailed in the lab. Gives the percent 
+    difference between two files. Used to test the difference between the 
+    output of compressing and decompressing an image and the original
+    provided image.
+
+- bitpacktesting.c 
+    This file was a main used to test individual functions from bitpack.c
+    to ensure they worked outside of the context of our compression fucntions. 
+
+Correctly Implemented:
+    compress40
+    decompress40
+    All functionalities have been correctly implemented. 
+
+Hours:
+7.5 hours analysis
+25 hours implementation
+32.5 Hours in total
+
+
+Assistance
+We received help from the following TA's:
+    - Gustavo
+    - Mary Joy
+    - Alan
+    - Kunal
+    - Jeremy 
+    - Adam
+    - Alec
+    - Anne Marie
+
