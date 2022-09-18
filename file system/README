@@ -1,0 +1,50 @@
+Matt Zhou 
+9/18/22
+
+- Implemented a simple direct indexed file system on top of a simulated disk.
+  - Simulate disk implemented through:
+             basic_file_system.h
+             basic_file_system.c
+             raw_disk.h
+             raw_disk.c
+- Provided implementations for a variety of file system functions that are similar to the Linux (POSIX) file system functions, although there are a few differences 
+  (such as not needing to open() or close() files; JFS will allow you to just start reading or writing any file wihout opening it first.)
+   - implemented through:
+            jumbo_file_system.h
+            jumbo_file_system.c            
+
+Implemented functions:
+jfs_ls
+When implementing jfs_ls, the caller will pass in two arrays of string pointers, but they do not point to any strings (the pointers are invalid). 
+You should allocate any strings needed, and set the rest of the pointers in the array to NULL. The caller will free() any non-null pointers in the arrays, 
+so not allocating them correctly will result in invalid frees in the caller. You can look at command_line.c for an example of calling this function and 
+how the caller handles the arrays and pointers.
+
+jfs_write
+The caller will pass in a buffer and the length of the buffer to jfs_write, which should write count bytes to the file. Note that the buffer is not a string, 
+and therefore not null-terminated! (In fact, it could have a 0 byte in the middle of the buffer, but the whole count bytes should still be written!) 
+Do not assume the data is text; it could be binary.
+
+If jfs_write fails, no data should have been written to the file (on disk), and no blocks should be allocated (that weren’t already allocated when jfs_write was called).
+
+jfs_read
+Instead of passing in a count variable, the caller will pass a pointer to a count. jfs_read should read from the file, but write no more than the first 
+*ptr_count bytes to the buffer (so that it doesn’t overrun the buffer). However, the file could be smaller than the buffer, and it should not write any 
+more data than the file contains. Therefore, after writing to the buffer, jfs_read should set *ptr_count to the number of bytes actually written to the buffer.
+
+jfs_stat
+The caller will pass a pointer to a stats struct to jfs_stat and the function will write the info about the file or directory to the stats struct. 
+That struct is defined as:
+
+struct stats {
+  uint32_t is_dir;                // 0 if it is a directory, 1 if it is a regular file
+  char name[MAX_NAME_LENGTH + 1]; // +1 for the '\0' character
+  block_num_t block_num;          // of the dir block, or the inode (for regular files)
+  uint16_t num_data_blocks;       // not counting the inode (ignored if is_dir is 0)
+  uint32_t file_size;             // in bytes (ignored if is_dir is 0)
+};
+is_dir is a flag that indicates whether the file is a regular file (1) or a directory (0). name is the name of the file or directory, and block_num is the block number 
+of the directory block or inode. Those should be filled in in any case, but num_data_blocks and file_size are only for regular files and may be ignored if stats for a 
+directory are being returned. file_size is the size of the file (in Bytes), and num_data_blocks is the number of data blocks on disk being used to store the file data 
+(so do not count the inode itself in this count).
+
