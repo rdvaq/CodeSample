@@ -1,0 +1,9 @@
+// Matt Zhou 10/4/2022
+
+
+Simple HTTP Porxy with its own file cache.
+
+Uses TCP through the socket interface to transfer data. 
+
+The proxy relays HTTP messages between a client and server, and cache the response to
+facilitate faster load times.
