@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: ./test [ resource ]" >&2
+    echo Resource must be one of
+    cat ../server/records.txt
+    echo
+    exit 2
+fi
+
+resource=$1
+PORT=9087
+
+curl -s http://localhost:$PORT/$resource -o server_response
+
+diff=$(diff server_response ../files/$resource)
+
+if [ "$diff" != "" ]
+then
+    echo FAILED
+else
+    echo PASSED
+fi
+
+

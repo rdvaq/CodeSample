@@ -1,0 +1,7 @@
+#!/bin/bash 
+
+num_sockets=$1
+
+rm connect_ddos.out 
+make connect_ddos.out 
+./connect_ddos.out $num_sockets

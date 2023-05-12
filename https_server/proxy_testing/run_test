@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Prerequisite: ./startproxy and ./startserver
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: ./server_test [ resource ]" >&2
+    exit 2
+fi
+
+resource=$1
+
+PROXY_PORT=9086
+ 
+proxy_time=$(/usr/bin/time -f "%e" curl -s -x localhost:${PROXY_PORT} ${resource} -o out_files/proxy_response 2>&1)
+sleep 1
+server_time=$(/usr/bin/time -f "%e" curl -s ${resource} -o out_files/server_response 2>&1)
+
+diff=$(diff out_files/proxy_response out_files/server_response) 
+
+if [ "$diff" != "" ] 
+then
+    echo FAILED - DIFF NOT EMPTY
+else
+    echo PASSED - DIFF EMPTY
+fi
+
+size=$(stat -c%s out_files/proxy_response)
+echo -e "${resource} ${size} ${proxy_time} ${server_time}"

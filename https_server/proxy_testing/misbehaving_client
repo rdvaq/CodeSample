@@ -1,0 +1,44 @@
+#!/bin/bash 
+
+rm misbehaving_client.out
+make misbehaving_client.out
+
+./misbehaving_client.out
+
+echo -n -e "HTTP/1.1 400 Bad Request\r\n\r\n" > out_files/server_response1
+echo -n -e "HTTP/1.1 403 Forbidden\r\n\r\n" > out_files/server_response2
+echo -n -e "HTTP/1.1 403 Forbidden\r\n\r\n" > out_files/server_response3
+curl -s http://www.cs.tufts.edu/comp/112/index.html -o out_files/server_response4
+
+diff1=$(diff out_files/proxy_response1 out_files/server_response1)
+diff2=$(diff out_files/proxy_response2 out_files/server_response2)
+diff3=$(diff out_files/proxy_response3 out_files/server_response3)
+diff3=$(diff out_files/proxy_response4 out_files/server_response4)
+
+if [ "$diff1" != "" ]
+then
+	echo diff1 FAILED
+else
+	echo diff1 PASSED 
+fi
+
+if [ "$diff2" != "" ]
+then
+	echo diff2 FAILED
+else
+	echo diff2 PASSED 
+fi
+
+if [ "$diff3" != "" ]
+then
+	echo diff3 FAILED
+else
+	echo diff3 PASSED 
+fi
+
+if [ "$diff4" != "" ]
+then
+	echo diff4 FAILED
+else
+	echo diff4 PASSED 
+fi

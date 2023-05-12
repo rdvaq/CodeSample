@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# server: 
+
+# file01 max age 3600
+# file02 max age 3
+# file03 max age 3600
+
+# proxy: ram capacity of 2 
+
+# client: 
+
+# GET file01 
+# GET file02 
+# sleep 2 (file02 becomes stale)
+# GET file03
+
+# file01 should be evicted for file03 
+
+old_records=$(cat ../server/records.txt)
+echo -e "file01 6 3600\nfile02 6 3\nfile03 6 3600" > ../server/records.txt
+echo sleeping 6s to ./startserver
+sleep 6
+curl -s -x localhost:9086 localhost:9087/file01 -o out_files/proxy_response
+curl -s -x localhost:9086 localhost:9087/file02 -o out_files/proxy_response
+sleep 2
+curl -s -x localhost:9086 localhost:9087/file03 -o out_files/proxy_response
+curl -s -i -x localhost:9086 localhost:9087/file01 -o out_files/proxy_response
+result=$(cat out_files/proxy_response | grep Age:)
+
+if [ "$result" != "" ]
+then
+    echo FAILED 
+else
+    echo PASSED 
+fi
+
+echo -e "$old_records" > ../server/records.txt 
+echo reminder to shut server down

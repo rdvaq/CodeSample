@@ -1,0 +1,18 @@
+#!/bin/bash 
+
+# check that age is included in from cache response
+    # GET file 1
+    # GET file 1 -> grep response for Age:
+
+curl -s -x localhost:9086 http://www.testingmcafeesites.com/index.html -o out_files/proxy_response 
+curl -s -i -x localhost:9086 http://www.testingmcafeesites.com/index.html -o out_files/proxy_response 
+result=$(cat out_files/proxy_response | grep Age:)
+
+if [ "$result" != "" ]
+then
+    echo PASSED 
+else
+    echo FAILED 
+fi
+
+

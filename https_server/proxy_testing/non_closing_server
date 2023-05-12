@@ -1,0 +1,27 @@
+#!/bin/bash 
+
+rm non_closing_server.out
+make non_closing_server.out
+
+curl -s http://www.testingmcafeesites.com/testcat_ac.html -o out_files/server_response1
+curl -s http://www.testingmcafeesites.com/testcat_al.html -o out_files/server_response2
+
+./non_closing_server.out
+
+diff1=$(diff out_files/proxy_response1 out_files/server_response1)
+diff2=$(diff out_files/proxy_response2 out_files/server_response2)
+
+if [ "$diff1" != "" ]
+then
+	echo diff1 FAILED
+else
+	echo diff1 PASSED 
+fi
+
+if [ "$diff2" != "" ]
+then
+	echo diff2 FAILED
+else
+	echo diff2 PASSED 
+fi
+

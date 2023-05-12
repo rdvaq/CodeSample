@@ -1,0 +1,33 @@
+#!/bin/bash 
+
+# check that oldest item is evicted if cache overflows 
+    # GET file 1 - 11 
+    # GET file 1 -> grep response for Age: should yield nothing
+
+curl -s -x localhost:9086 http://www.testingmcafeesites.com/index.html -o out_files/proxy_response
+curl -s -x localhost:9086 http://www.testingmcafeesites.com/testcat_ac.html -o out_files/proxy_response
+curl -s -x localhost:9086 http://www.testingmcafeesites.com/testcat_al.html -o out_files/proxy_response
+curl -s -x localhost:9086 http://www.testingmcafeesites.com/testcat_au.html -o out_files/proxy_response
+curl -s -x localhost:9086 http://www.testingmcafeesites.com/testcat_be.html -o out_files/proxy_response
+curl -s -x localhost:9086 http://www.testingmcafeesites.com/testcat_bl.html -o out_files/proxy_response
+curl -s -x localhost:9086 http://www.testingmcafeesites.com/testcat_bu.html -o out_files/proxy_response
+curl -s -x localhost:9086 http://www.testingmcafeesites.com/testcat_ch.html -o out_files/proxy_response
+curl -s -x localhost:9086 http://www.testingmcafeesites.com/testcat_cm.html -o out_files/proxy_response
+curl -s -x localhost:9086 http://www.testingmcafeesites.com/testcat_co.html -o out_files/proxy_response
+curl -s -x localhost:9086 http://www.testingmcafeesites.com/testcat_cp.html -o out_files/proxy_response
+curl -s -i -x localhost:9086 http://www.testingmcafeesites.com/index.html -o out_files/proxy_response
+result=$(cat out_files/proxy_response | grep Age:)
+
+if [ "$result" != "" ]
+then
+    echo FAILED 
+else
+    echo PASSED 
+fi
+
+
+
+
+
+
+

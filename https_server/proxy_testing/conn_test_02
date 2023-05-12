@@ -1,0 +1,22 @@
+#! /bin/bash
+
+port=9086
+
+# http://www.cs.cmu.edu/~prs/bio.html
+./conn_client.out localhost 9086 www.cs.cmu.edu/~prs/bio.html www.cs.cmu.edu
+curl -s www.cs.cmu.edu/~prs/bio.html > r2_file 
+diff t2_file r2_file
+rm t2_file
+
+
+# http://www.cs.tufts.edu/comp/112/index.html
+./conn_client.out localhost 9086 www.cs.tufts.edu/comp/112/index.html www.cs.tufts.edu
+curl -s www.cs.tufts.edu/comp/112/index.html > r2_file 
+diff t2_file r2_file
+rm t2_file
+
+# http://www.cs.cmu.edu/~dga/dga-headshot.jpg
+./conn_client.out localhost 9086 www.cs.cmu.edu/~dga/dga-headshot.jpg www.cs.cmu.edu
+curl -s www.cs.cmu.edu/~dga/dga-headshot.jpg > r2_file 
+diff t2_file r2_file
+rm t2_file

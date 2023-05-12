@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Checking with different ports
+
+echo sleeping 15s to ./startserver and ./a.out 9088 0
+sleep 15
+curl -s -x localhost:9086 localhost:9087/file01 -o out_files/proxy_response
+curl -s -i -x localhost:9086 localhost:9088/file01 -o out_files/proxy_response
+result=$(cat out_files/proxy_response | grep Age:)
+if [ "$result" != "" ]
+then
+    echo FAILED 
+else
+    echo PASSED 
+fi
+echo reminder to shut servers down

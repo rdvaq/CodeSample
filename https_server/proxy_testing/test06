@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# check stale item is evicted even if its not oldest if cache overflows
+    # GET file 1 - 10
+    # Let file 5 go stale
+    # GET file 11, file 5 -> grep response for Age: should yield nothing
+
+old_records=$(cat ../server/records.txt)
+echo -e "file01 6 3600\nfile02 6 3600\nfile03 6 3600\nfile04 6 3600\nfile05 6 0\nfile06 6 3600\nfile07 6 3600\nfile08 6 3600\nfile09 6 3600\nfile10 6 3600\nfile11 6 3600" > ../server/records.txt
+echo sleeping 6s to ./startserver
+sleep 6
+curl -s -x localhost:9086 localhost:9087/file01 -o out_files/proxy_response
+curl -s -x localhost:9086 localhost:9087/file02 -o out_files/proxy_response
+curl -s -x localhost:9086 localhost:9087/file03 -o out_files/proxy_response
+curl -s -x localhost:9086 localhost:9087/file04 -o out_files/proxy_response
+curl -s -x localhost:9086 localhost:9087/file05 -o out_files/proxy_response
+curl -s -x localhost:9086 localhost:9087/file06 -o out_files/proxy_response
+curl -s -x localhost:9086 localhost:9087/file07 -o out_files/proxy_response
+curl -s -x localhost:9086 localhost:9087/file08 -o out_files/proxy_response
+curl -s -x localhost:9086 localhost:9087/file09 -o out_files/proxy_response
+curl -s -x localhost:9086 localhost:9087/file10 -o out_files/proxy_response
+curl -s -x localhost:9086 localhost:9087/file11 -o out_files/proxy_response
+curl -s -i -x localhost:9086 localhost:9087/file05 -o out_files/proxy_response
+result=$(cat out_files/proxy_response | grep Age:)
+
+if [ "$result" != "" ]
+then
+    echo FAILED 
+else
+    echo PASSED 
+fi
+
+echo -e "$old_records" > ../server/records.txt 
+echo reminder to shut server down

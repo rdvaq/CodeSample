@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm a.out
+make
+valgrind --leak-check=yes ./a.out

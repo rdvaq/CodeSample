@@ -1,0 +1,16 @@
+resource
+http://www.cs.tufts.edu/comp/112/index.html
+http://www.cs.cmu.edu/~prs/bio.html
+http://www.testingmcafeesites.com/index.html
+http://www.cs.tufts.edu/comp/112/index.html
+http://www.cs.cmu.edu/~prs/bio.html
+http://www.testingmcafeesites.com/index.html
+http://www.cs.tufts.edu/comp/112/index.html
+http://www.cs.cmu.edu/~prs/bio.html
+http://www.testingmcafeesites.com/index.html
+http://www.cs.tufts.edu/comp/112/index.html
+http://www.cs.cmu.edu/~prs/bio.html
+http://www.testingmcafeesites.com/index.html
+http://www.cs.tufts.edu/comp/112/index.html
+http://www.cs.cmu.edu/~prs/bio.html
+http://www.testingmcafeesites.com/index.html

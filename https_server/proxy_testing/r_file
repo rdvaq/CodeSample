@@ -1,0 +1,2087 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-3800777426968b71f1f",applicationID:"1753969485"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<link rel="canonical" href="https://engineering.tufts.edu/cs/people/faculty/fahad-dogar" />
+<meta name="google-site-verification" content="SPM0oNLmTUuCKCosC0NdakCOiWoGVmHLvn0C6VNzfdU" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script type="application/ld+json">{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": "1",
+            "name": "Home",
+            "item": "https://cs.it.tufts.edu/"
+          },{
+            "@type": "ListItem",
+            "position": "2",
+            "name": "People",
+            "item": "https://cs.it.tufts.edu/people"
+          },{
+            "@type": "ListItem",
+            "position": "3",
+            "name": "Faculty",
+            "item": "https://cs.it.tufts.edu/people/faculty"
+          },{
+              "@type": "ListItem",
+              "position": "4",
+              "name": "Fahad Dogar"
+            }]}</script>
+<link rel="icon" href="/cs/themes/custom/tuftstheme/favicon.ico" type="image/vnd.microsoft.icon" />
+<script src="/cs/sites/g/files/lrezom576/files/google_tag/school_of_engineering/google_tag.script.js?rl2ywv" defer></script>
+
+    <title>Fahad Dogar | Department of Computer Science</title>
+    <link rel="stylesheet" media="all" href="/cs/sites/g/files/lrezom576/files/css/css_9m8-tA3IQf8ThlLQYTTZUyEweCvyR908Tg0XCbKYOfY.css" />
+<link rel="stylesheet" media="all" href="/cs/sites/g/files/lrezom576/files/css/css_UEiRV3Zmw37kYjA1wQi5VLk7-z99WdprR0zx8KOGG9I.css" />
+<link rel="stylesheet" media="all" href="https://cloud.typography.com/6706294/6678772/css/fonts.css" />
+<link rel="stylesheet" media="all" href="https://use.typekit.net/xdc5dve.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-person site-type-department site-id-576">
+        <nav class="skip-links" aria-label="Skip links">
+      <a href="#block-mainpagecontent" class="visually-hidden focusable skip-link">
+        Skip to main content
+      </a>
+                    <a href="#search-toggle" class="visually-hidden focusable skip-link">
+          Skip to search
+        </a>
+          </nav>
+    <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3TQJL3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+<div  class="layout-container">
+    
+<header  class="header header--alternate" aria-label="Site header" aria-level="1">
+                
+
+
+
+
+
+<div  class="header-utility header-utility--alternate">
+  <div  class="header-utility__wrap header-utility__wrap--alternate">
+    <div  class="header-utility__logo-wrap header-utility__logo-wrap--alternate">
+                
+                  
+
+<a href="https://www.tufts.edu"  target="_blank" class="header-utility__logo-link">
+              
+  
+
+  <svg  class="header-utility__logo"
+
+    
+          aria-label="Tufts University"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#tufts-logo-full"></use>
+  </svg>
+          </a>
+                                <div  class="header-utility__school header-utility__school--alternate">
+                  
+                  
+
+<a href="https://engineering.tufts.edu"  target="_blank" class="header-utility__school-link">
+                                                                School of Engineering                                      </a>
+            </div>
+                    <div  class="header-utility__menus header-utility__menus--alternate">
+            <nav aria-label="Utility" id="block-utility" class="block block-menu navigation menu--utility">
+  
+  
+        
+
+
+
+<div  class="secondary-menu secondary-menu--utility secondary-menu--desktop menu" id="secondary-menu-utiltiy">
+  
+
+
+
+    
+                                  
+        
+<ul  class="secondary-menu__items secondary-menu__items--utility secondary-menu__items--desktop menu-entries menu-entries-0" >
+                              
+
+<li  class="secondary-menu__item secondary-menu__item--utility secondary-menu__item--desktop secondary-menu__item--with-sub menu-entry menu-entry-0 menu-entry--with-sub">
+                                    <div  class="item__expander-wrapper item__expander-wrapper--utility item__expander-wrapper--desktop item__expander-wrapper--with-sub menu-expander-wrapper">
+                                          
+                
+  
+
+<a href="/cs/"  class="item__link item__link--utility item__link--desktop item__link--with-sub menu-link">
+      <span  class="item__text item__text--utility item__text--desktop item__text--with-sub menu-text">
+      Information for
+    </span>
+          
+  
+
+  <svg  class="item__icon menu-icon"
+
+          aria-hidden="true"
+    
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#arrow-down"></use>
+  </svg>
+      </a>
+                    
+<button tabindex=0  class="menu-expand large-hidden">
+      
+  
+
+  <svg  class="menu-expand__icon menu-expand__icon--rotate"
+
+    
+          aria-label="Toggle submenu"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#arrow-down"></use>
+  </svg>
+  </button>
+      </div>
+                            
+                                                                        
+        
+<ul  class="secondary-menu__items secondary-menu__items--utility secondary-menu__items--desktop secondary-menu__items--sub secondary-menu__items--sub-1 menu-entries menu-entries-1 menu-subentries" >
+                              
+
+<li  class="secondary-menu__item secondary-menu__item--utility secondary-menu__item--desktop secondary-menu__item--sub secondary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="https://students.tufts.edu/"  class="item__link item__link--utility item__link--desktop item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--utility item__text--desktop item__text--sub item__text--sub-1 menu-text">
+      Students
+    </span>
+      </a>
+              </li>
+                            
+
+<li  class="secondary-menu__item secondary-menu__item--utility secondary-menu__item--desktop secondary-menu__item--sub secondary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="https://engineering.tufts.edu/facultystaff"  class="item__link item__link--utility item__link--desktop item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--utility item__text--desktop item__text--sub item__text--sub-1 menu-text">
+      Faculty &amp; Staff
+    </span>
+      </a>
+              </li>
+                            
+
+<li  class="secondary-menu__item secondary-menu__item--utility secondary-menu__item--desktop secondary-menu__item--sub secondary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="https://engineering.tufts.edu/alumni"  class="item__link item__link--utility item__link--desktop item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--utility item__text--desktop item__text--sub item__text--sub-1 menu-text">
+      Alumni
+    </span>
+      </a>
+              </li>
+                            
+
+<li  class="secondary-menu__item secondary-menu__item--utility secondary-menu__item--desktop secondary-menu__item--sub secondary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="https://engineering.tufts.edu/industry"  class="item__link item__link--utility item__link--desktop item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--utility item__text--desktop item__text--sub item__text--sub-1 menu-text">
+      Industry Partners
+    </span>
+      </a>
+              </li>
+              </ul>
+  
+      </li>
+                  
+
+<li  class="secondary-menu__item secondary-menu__item--utility secondary-menu__item--desktop menu-entry menu-entry-0">
+                                          
+                
+  
+
+<a href="/cs/people/faculty"  class="item__link item__link--utility item__link--desktop menu-link">
+      <span  class="item__text item__text--utility item__text--desktop menu-text">
+      Find Faculty
+    </span>
+          
+  
+
+  <svg  class="item__icon menu-icon"
+
+          aria-hidden="true"
+    
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#grad-hat"></use>
+  </svg>
+      </a>
+              </li>
+                  
+
+<li  class="secondary-menu__item secondary-menu__item--utility secondary-menu__item--desktop menu-entry menu-entry-0">
+                                          
+                
+  
+
+<a href="http://engineering.tufts.edu/about/contact"  class="item__link item__link--utility item__link--desktop menu-link">
+      <span  class="item__text item__text--utility item__text--desktop menu-text">
+      Apply
+    </span>
+          
+  
+
+  <svg  class="item__icon menu-icon"
+
+          aria-hidden="true"
+    
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#edit"></use>
+  </svg>
+      </a>
+              </li>
+                  
+
+<li  class="secondary-menu__item secondary-menu__item--utility secondary-menu__item--desktop menu-entry menu-entry-0">
+                                                        
+                
+                  
+
+<a href="https://give.tufts.edu/campaigns/22193/donations/new?designation=ComputerScience"  target="_blank" class="item__link item__link--utility item__link--desktop menu-link">
+      <span  class="item__text item__text--utility item__text--desktop menu-text">
+      Give
+    </span>
+          
+  
+
+  <svg  class="item__icon menu-icon"
+
+          aria-hidden="true"
+    
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#gift"></use>
+  </svg>
+      </a>
+              </li>
+              </ul>
+  
+</div>
+
+  </nav>
+
+  <button  class="search-toggle search-block-form google-cse" id="search-toggle">
+  <span  class="search-toggle__open">
+    
+  
+
+  <svg  class="search-toggle__icon search-toggle__icon--search"
+
+          aria-hidden="true"
+    
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#search"></use>
+  </svg>
+    <span  class="search-toggle__text">
+      Open search
+    </span>
+  </span>
+        <div>
+        
+                
+      </div>
+      <span  class="search-toggle__close">
+    
+  
+
+  <svg  class="search-toggle__icon search-toggle__icon--close"
+
+          aria-hidden="true"
+    
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#close"></use>
+  </svg>
+    <span  class="search-toggle__text">
+      Close search
+    </span>
+  </span>
+</button>
+  
+<div  class="search-dialog" id="search-dialog" aria-modal='true'>
+  <div  class="search-dialog__header">
+    <button  class="search-dialog__close">
+      
+  
+
+  <svg  class="search-dialog__icon search-dialog__icon--close"
+
+    
+          aria-label="Close search dialog"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#close"></use>
+  </svg>
+      </span>
+    </button>
+  </div>
+  <div  class="search-dialog__main">
+          
+
+
+
+
+<form  class="search-form" name="search-form" id="search-form" role="search" method="get" action="/cs/search/content">
+  <input  class="search-form__input" type="text" name="keys" size="15" maxlength="128" form="search-form" id="search-form-input" placeholder="Search" aria-autocomplete="both" aria-haspopup="false" aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="off" title="Search">
+  
+
+
+<button  class="search-form__button" type="submit" form="search-form">
+          
+  
+
+  <svg  class="search-form__button-icon search-form__button-icon--search"
+
+    
+          aria-label="Submit search"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#search"></use>
+  </svg>
+    </button>
+</form>
+      </div>
+</div>
+
+    
+<button  class="menu-toggle menu-toggle--utility menu-toggle--alternate" id="menu-toggle">
+  <span  class="menu-toggle__open menu-toggle__open--utility menu-toggle__open--alternate">
+    
+  
+
+  <svg  class="menu-toggle__icon menu-toggle__icon--open"
+
+          aria-hidden="true"
+    
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#menu"></use>
+  </svg>
+    <span  class="menu-toggle__text menu-toggle__text--utility menu-toggle__text--alternate">
+      Open menu
+    </span>
+  </span>
+  <span  class="menu-toggle__close menu-toggle__close--utility menu-toggle__close--alternate">
+    
+  
+
+  <svg  class="menu-toggle__icon menu-toggle__icon--close"
+
+          aria-hidden="true"
+    
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#close"></use>
+  </svg>
+    <span  class="menu-toggle__text menu-toggle__text--utility menu-toggle__text--alternate">
+      Close menu
+    </span>
+  </span>
+</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+                <div  class="header__department header__department--alternate">
+                
+  
+
+<a href="https://engineering.tufts.edu/cs/"  class="header__logo-link header__logo-link--alternate">
+      <span  class="header__text header__text--alternate">
+      Department of Computer Science
+    </span>
+      </a>
+          </div>
+  
+  <div id='header__menus'  class="header__menus header__menus--alternate">
+                  
+
+
+<div  class="primary-menu menu" id="primary-menu">
+  
+
+
+
+    
+                                            
+        
+<ul  class="primary-menu__items menu-entries menu-entries-0" >
+                                
+
+<li  class="primary-menu__item primary-menu__item--with-sub menu-entry menu-entry-0 menu-entry--with-sub">
+                                    <div  class="item__expander-wrapper item__expander-wrapper--with-sub menu-expander-wrapper">
+                                          
+                
+  
+
+<a href="/cs/about"  class="item__link item__link--with-sub menu-link">
+      <span  class="item__text item__text--with-sub menu-text">
+      About
+    </span>
+      </a>
+                    
+<button tabindex=0  class="menu-expand large-hidden">
+      
+  
+
+  <svg  class="menu-expand__icon menu-expand__icon--expand"
+
+    
+          aria-label="Expand submenu"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#plus"></use>
+  </svg>
+    
+  
+
+  <svg  class="menu-expand__icon menu-expand__icon--collapse"
+
+    
+          aria-label="Collapse submenu"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#minus"></use>
+  </svg>
+  </button>
+      </div>
+                            
+                                                                                  
+        
+<ul  class="primary-menu__items primary-menu__items--sub primary-menu__items--sub-1 menu-entries menu-entries-1 menu-subentries" >
+                                
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/about/chairs-message"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Chair&#039;s message
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="https://engineering.tufts.edu/jccwebcam"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Tufts Joyce Cummings Center
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/about/employment-opportunities"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Employment opportunities
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/about/visiting"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Visiting
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/about/contact-information"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Contact information
+    </span>
+      </a>
+              </li>
+              </ul>
+  
+      </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--with-sub menu-entry menu-entry-0 menu-entry--with-sub">
+                                    <div  class="item__expander-wrapper item__expander-wrapper--with-sub menu-expander-wrapper">
+                                          
+                
+  
+
+<a href="/cs/prospective-students"  class="item__link item__link--with-sub menu-link">
+      <span  class="item__text item__text--with-sub menu-text">
+      Prospective Students
+    </span>
+      </a>
+                    
+<button tabindex=0  class="menu-expand large-hidden">
+      
+  
+
+  <svg  class="menu-expand__icon menu-expand__icon--expand"
+
+    
+          aria-label="Expand submenu"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#plus"></use>
+  </svg>
+    
+  
+
+  <svg  class="menu-expand__icon menu-expand__icon--collapse"
+
+    
+          aria-label="Collapse submenu"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#minus"></use>
+  </svg>
+  </button>
+      </div>
+                            
+                                                                                  
+        
+<ul  class="primary-menu__items primary-menu__items--sub primary-menu__items--sub-1 menu-entries menu-entries-1 menu-subentries" >
+                                
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/prospective-students/undergraduate"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Undergraduate
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/prospective-students/masters"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Master&#039;s
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="https://onlinesoe.tufts.edu/"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Online Master&#039;s Program
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/prospective-students/phd"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      PhD
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/prospective-students/certificate-and-post-baccalaureate"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Certificate and post-baccalaureate
+    </span>
+      </a>
+              </li>
+              </ul>
+  
+      </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--with-sub menu-entry menu-entry-0 menu-entry--with-sub">
+                                    <div  class="item__expander-wrapper item__expander-wrapper--with-sub menu-expander-wrapper">
+                                          
+                
+  
+
+<a href="/cs/current-students"  class="item__link item__link--with-sub menu-link">
+      <span  class="item__text item__text--with-sub menu-text">
+      Current Students
+    </span>
+      </a>
+                    
+<button tabindex=0  class="menu-expand large-hidden">
+      
+  
+
+  <svg  class="menu-expand__icon menu-expand__icon--expand"
+
+    
+          aria-label="Expand submenu"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#plus"></use>
+  </svg>
+    
+  
+
+  <svg  class="menu-expand__icon menu-expand__icon--collapse"
+
+    
+          aria-label="Collapse submenu"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#minus"></use>
+  </svg>
+  </button>
+      </div>
+                            
+                                                                                  
+        
+<ul  class="primary-menu__items primary-menu__items--sub primary-menu__items--sub-1 menu-entries menu-entries-1 menu-subentries" >
+                                
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/current-students/courses-and-registration"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Courses and registration
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/current-students/undergraduate"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Undergraduate
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/current-students/graduate"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Graduate
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/current-students/policies-and-documentation"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Policies and documentation
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/current-students/student-requests-funding"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Student requests for funding
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/current-students/student-resources"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Student resources
+    </span>
+      </a>
+              </li>
+              </ul>
+  
+      </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--with-sub menu-entry menu-entry-0 menu-entry--with-sub">
+                                    <div  class="item__expander-wrapper item__expander-wrapper--with-sub menu-expander-wrapper">
+                                          
+                
+  
+
+<a href="/cs/people"  class="item__link item__link--with-sub menu-link">
+      <span  class="item__text item__text--with-sub menu-text">
+      People
+    </span>
+      </a>
+                    
+<button tabindex=0  class="menu-expand large-hidden">
+      
+  
+
+  <svg  class="menu-expand__icon menu-expand__icon--expand"
+
+    
+          aria-label="Expand submenu"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#plus"></use>
+  </svg>
+    
+  
+
+  <svg  class="menu-expand__icon menu-expand__icon--collapse"
+
+    
+          aria-label="Collapse submenu"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#minus"></use>
+  </svg>
+  </button>
+      </div>
+                            
+                                                                                  
+        
+<ul  class="primary-menu__items primary-menu__items--sub primary-menu__items--sub-1 menu-entries menu-entries-1 menu-subentries" >
+                                
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/people/faculty"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Faculty
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/people/staff"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Staff
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/people/phd-students"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      PhD Students
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/people/teaching-assistants"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Teaching Assistants
+    </span>
+      </a>
+              </li>
+              </ul>
+  
+      </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--with-sub menu-entry menu-entry-0 menu-entry--with-sub">
+                                    <div  class="item__expander-wrapper item__expander-wrapper--with-sub menu-expander-wrapper">
+                                          
+                
+  
+
+<a href="/cs/research"  class="item__link item__link--with-sub menu-link">
+      <span  class="item__text item__text--with-sub menu-text">
+      Research
+    </span>
+      </a>
+                    
+<button tabindex=0  class="menu-expand large-hidden">
+      
+  
+
+  <svg  class="menu-expand__icon menu-expand__icon--expand"
+
+    
+          aria-label="Expand submenu"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#plus"></use>
+  </svg>
+    
+  
+
+  <svg  class="menu-expand__icon menu-expand__icon--collapse"
+
+    
+          aria-label="Collapse submenu"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#minus"></use>
+  </svg>
+  </button>
+      </div>
+                            
+                                                                                  
+        
+<ul  class="primary-menu__items primary-menu__items--sub primary-menu__items--sub-1 menu-entries menu-entries-1 menu-subentries" >
+                                
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/research/facilities"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Facilities
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/research/undergraduate-research"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Undergraduate research
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/research/graduate-research"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Graduate Research
+    </span>
+      </a>
+              </li>
+              </ul>
+  
+      </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--with-sub menu-entry menu-entry-0 menu-entry--with-sub">
+                                    <div  class="item__expander-wrapper item__expander-wrapper--with-sub menu-expander-wrapper">
+                                          
+                
+  
+
+<a href="/cs/communitydiversity"  class="item__link item__link--with-sub menu-link">
+      <span  class="item__text item__text--with-sub menu-text">
+      Community/Diversity
+    </span>
+      </a>
+                    
+<button tabindex=0  class="menu-expand large-hidden">
+      
+  
+
+  <svg  class="menu-expand__icon menu-expand__icon--expand"
+
+    
+          aria-label="Expand submenu"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#plus"></use>
+  </svg>
+    
+  
+
+  <svg  class="menu-expand__icon menu-expand__icon--collapse"
+
+    
+          aria-label="Collapse submenu"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#minus"></use>
+  </svg>
+  </button>
+      </div>
+                            
+                                                                                  
+        
+<ul  class="primary-menu__items primary-menu__items--sub primary-menu__items--sub-1 menu-entries menu-entries-1 menu-subentries" >
+                                
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/communitydiversity/alumni"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Alumni
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/communitydiversity/diversity"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Diversity
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/communitydiversity/student-organizations"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Student organizations
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/communitydiversity/external-advisory-board"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      External Advisory Board
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/communitydiversity/student-alumni-mentorship-program"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Student-Alumni Mentorship Program
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/communitydiversity/support-department-computer-science"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Support the Department of Computer Science
+    </span>
+      </a>
+              </li>
+              </ul>
+  
+      </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--with-sub menu-entry menu-entry-0 menu-entry--with-sub">
+                                    <div  class="item__expander-wrapper item__expander-wrapper--with-sub menu-expander-wrapper">
+                                          
+                
+  
+
+<a href="/cs/news-events"  class="item__link item__link--with-sub menu-link">
+      <span  class="item__text item__text--with-sub menu-text">
+      News &amp; Events
+    </span>
+      </a>
+                    
+<button tabindex=0  class="menu-expand large-hidden">
+      
+  
+
+  <svg  class="menu-expand__icon menu-expand__icon--expand"
+
+    
+          aria-label="Expand submenu"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#plus"></use>
+  </svg>
+    
+  
+
+  <svg  class="menu-expand__icon menu-expand__icon--collapse"
+
+    
+          aria-label="Collapse submenu"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#minus"></use>
+  </svg>
+  </button>
+      </div>
+                            
+                                                                                  
+        
+<ul  class="primary-menu__items primary-menu__items--sub primary-menu__items--sub-1 menu-entries menu-entries-1 menu-subentries" >
+                                
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/news-events/news"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      News
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/news-events/events"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Events
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/news-events/colloquia"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Colloquia
+    </span>
+      </a>
+              </li>
+                              
+
+<li  class="primary-menu__item primary-menu__item--sub primary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="/cs/news-events/awards"  class="item__link item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--sub item__text--sub-1 menu-text">
+      Awards
+    </span>
+      </a>
+              </li>
+              </ul>
+  
+      </li>
+              </ul>
+  
+</div>
+
+
+
+
+
+
+
+
+<div  class="secondary-menu secondary-menu--mobile large-hidden menu" id="secondary-menu">
+  
+
+
+
+    
+                                  
+        
+<ul  class="secondary-menu__items secondary-menu__items--mobile menu-entries menu-entries-0" >
+                              
+
+<li  class="secondary-menu__item secondary-menu__item--mobile secondary-menu__item--with-sub menu-entry menu-entry-0 menu-entry--with-sub">
+                                    <div  class="item__expander-wrapper item__expander-wrapper--mobile item__expander-wrapper--with-sub menu-expander-wrapper">
+                                          
+                
+  
+
+<a href="/cs/"  class="item__link item__link--mobile item__link--with-sub menu-link">
+      <span  class="item__text item__text--mobile item__text--with-sub menu-text">
+      Information for
+    </span>
+          
+  
+
+  <svg  class="item__icon menu-icon"
+
+          aria-hidden="true"
+    
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#arrow-down"></use>
+  </svg>
+      </a>
+                    
+<button tabindex=0  class="menu-expand large-hidden">
+      
+  
+
+  <svg  class="menu-expand__icon menu-expand__icon--rotate"
+
+    
+          aria-label="Toggle submenu"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#arrow-down"></use>
+  </svg>
+  </button>
+      </div>
+                            
+                                                                        
+        
+<ul  class="secondary-menu__items secondary-menu__items--mobile secondary-menu__items--sub secondary-menu__items--sub-1 menu-entries menu-entries-1 menu-subentries" >
+                              
+
+<li  class="secondary-menu__item secondary-menu__item--mobile secondary-menu__item--sub secondary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="https://students.tufts.edu/"  class="item__link item__link--mobile item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--mobile item__text--sub item__text--sub-1 menu-text">
+      Students
+    </span>
+      </a>
+              </li>
+                            
+
+<li  class="secondary-menu__item secondary-menu__item--mobile secondary-menu__item--sub secondary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="https://engineering.tufts.edu/facultystaff"  class="item__link item__link--mobile item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--mobile item__text--sub item__text--sub-1 menu-text">
+      Faculty &amp; Staff
+    </span>
+      </a>
+              </li>
+                            
+
+<li  class="secondary-menu__item secondary-menu__item--mobile secondary-menu__item--sub secondary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="https://engineering.tufts.edu/alumni"  class="item__link item__link--mobile item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--mobile item__text--sub item__text--sub-1 menu-text">
+      Alumni
+    </span>
+      </a>
+              </li>
+                            
+
+<li  class="secondary-menu__item secondary-menu__item--mobile secondary-menu__item--sub secondary-menu__item--sub-1 menu-entry menu-entry-1 menu-entry--sub">
+                                          
+                
+  
+
+<a href="https://engineering.tufts.edu/industry"  class="item__link item__link--mobile item__link--sub item__link--sub-1 menu-link">
+      <span  class="item__text item__text--mobile item__text--sub item__text--sub-1 menu-text">
+      Industry Partners
+    </span>
+      </a>
+              </li>
+              </ul>
+  
+      </li>
+                  
+
+<li  class="secondary-menu__item secondary-menu__item--mobile menu-entry menu-entry-0">
+                                          
+                
+  
+
+<a href="/cs/people/faculty"  class="item__link item__link--mobile menu-link">
+      <span  class="item__text item__text--mobile menu-text">
+      Find Faculty
+    </span>
+          
+  
+
+  <svg  class="item__icon menu-icon"
+
+          aria-hidden="true"
+    
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#grad-hat"></use>
+  </svg>
+      </a>
+              </li>
+                  
+
+<li  class="secondary-menu__item secondary-menu__item--mobile menu-entry menu-entry-0">
+                                          
+                
+  
+
+<a href="http://engineering.tufts.edu/about/contact"  class="item__link item__link--mobile menu-link">
+      <span  class="item__text item__text--mobile menu-text">
+      Apply
+    </span>
+          
+  
+
+  <svg  class="item__icon menu-icon"
+
+          aria-hidden="true"
+    
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#edit"></use>
+  </svg>
+      </a>
+              </li>
+                  
+
+<li  class="secondary-menu__item secondary-menu__item--mobile menu-entry menu-entry-0">
+                                                        
+                
+                  
+
+<a href="https://give.tufts.edu/campaigns/22193/donations/new?designation=ComputerScience"  target="_blank" class="item__link item__link--mobile menu-link">
+      <span  class="item__text item__text--mobile menu-text">
+      Give
+    </span>
+          
+  
+
+  <svg  class="item__icon menu-icon"
+
+          aria-hidden="true"
+    
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#gift"></use>
+  </svg>
+      </a>
+              </li>
+              </ul>
+  
+</div>
+
+
+
+      </div>
+    </header>
+      <div>
+    <div id="block-breadcrumbs">
+  
+    
+    
+  <nav  class="breadcrumb__wrapper" aria-labelledby="system-breadcrumb">
+    <h2  class="visually-hidden" id='system-breadcrumb'>Breadcrumb</h2>
+    <ol  class="breadcrumb">
+          <li  class="breadcrumb__item">
+                  <a  class="breadcrumb__link" href="/cs/">Home</a>
+              </li>
+          <li  class="breadcrumb__item">
+                  <a  class="breadcrumb__link" href="/cs/people">People</a>
+              </li>
+          <li  class="breadcrumb__item">
+                  <a  class="breadcrumb__link" href="/cs/people/faculty">Faculty</a>
+              </li>
+          <li  class="breadcrumb__item">
+                  Fahad Dogar
+              </li>
+        </ol>
+  </nav>
+</div>
+
+  </div>
+
+    <div  class="content-region">
+    <div data-drupal-messages-fallback class="hidden"></div><div id="block-mainpagecontent">
+      
+
+              
+
+
+
+
+<main  class="main main--with-sidebar" id="main-content" aria-level="1" aria-label="Page content">
+  
+  <div  class="main__title" id="content-title">
+      </div>
+  
+          <div  class="main__content main__content--with-sidebar">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+		<div class="person component stack-tl person-detail">
+		<article class="person__card">
+			<div class="person__image">
+									  
+      <img src="/cs/sites/g/files/lrezom576/files/styles/large/public/tufts_feeds/people_fis/fdogar01.png?itok=OimrRHR2" width="400" height="500" alt="Fahad Dogar" loading="lazy" typeof="foaf:Image" />
+
+
+
+
+
+
+							</div>
+			<div class="person__details">
+
+				<h1 class="person__title h2">
+											<span>Fahad Dogar</span>
+
+									</h1>
+
+				<div class="person__additional-titles">
+					<div class="person__additional-title">
+																									
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																											
+																				
+																																																																																																																																																																																																																																																						
+																																																																																																																																																																																																																																	<div class="person_related_appts">
+									Associate Professor, Computer Science
+								</div>
+																																							
+																																																																																																																																																																																																																																																															</div>
+				</div>
+
+
+				
+				<div class="person__contact">
+					
+											<div class="person__contact--email">
+							<div class="person__contact--item">
+
+								<svg class="icon" aria-hidden="true" aria-labelledby="title-envelope">
+									<title id="title-envelope">Envelope</title>
+									<use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#envelope"></use>
+								</svg>
+
+								<a href="mailto:fahad.dogar@tufts.edu" class="link link--blue link--wrap">
+									<span class="text text--blue text--wrap">
+										fahad.dogar@tufts.edu
+									</span>
+								</a>
+							</div>
+						</div>
+																<div class="person__address_wrapper">
+							<span class="person__room">
+								<div>
+
+       
+<div  class="text-long stack-tl">
+                        <div>177 College Avenue</div>
+                  </div>
+  </div>
+							</span>
+							<span class="person__address">
+								
+							</span>
+						</div>
+					
+				</div>
+			</div>
+		</article>
+
+	</div>
+			<div class="research-interests component stack-l">
+			<strong>Research/Areas of Interest:</strong>
+			Improving performance and reliability of networked systems, specifically cloud-based systems, mobile and wireless systems, and the Internet. Also, interested in designing technologies for developing regions.
+		</div>
+		<div class="component stack-l">
+				
+		
+		
+			
+
+  <div class="stack-tl">
+    
+<h2  class="heading h3 stack-tl">
+      Education
+  </h2>
+         
+<div  class="text-long">
+                    <div><ul><li>Ph.D., Carnegie Mellon University, United States, 2012</li><li>B.Sc., Lahore University of Management Sciences, Lahore, Pakistan, 2005</li></ul></div>
+              </div>
+      </div>
+
+			<div class="truncate">
+
+  <div class="stack-tl">
+    
+<h2  class="heading h3 stack-tl">
+      Biography
+  </h2>
+         
+<div  class="text-long">
+                    <div>Fahad Dogar is an associate professor in the Department of Computer Science department at Tufts University. He completed his Ph.D. at Carnegie Mellon University and his B.Sc. from LUMS, Pakistan. Before joining Tufts, he was a postdoctoral researcher in the systems and networking group at Microsoft Research UK. Dogar's research interests span the broad areas of networking and distributed systems, with a recent focus on data center networking and future Internet architectures. His research has been published in venues like ACM SIGCOMM, Usenix NSDI, and ACM MobiCom. His awards include a gold medal from the president of Pakistan for being the top computer science student in his undergraduate cohort.</div>
+              </div>
+      </div>
+</div>
+			<div class="profile-links">
+				<span class="person-profile-url">
+  <a href="https://facultyprofiles.tufts.edu/fahad-dogar" class="button">Read More</a>
+</span>
+
+				<span class="person-publications-url">
+ <a href="https://facultyprofiles.tufts.edu/fahad-dogar/publications" class="button">Career Highlights / Publications</a>
+</span>
+
+				<span class="person-research-url">
+  <a href="https://facultyprofiles.tufts.edu/fahad-dogar/grants" class="button">Research</a>
+</span>
+
+				<span class="person-activities-url">
+ <a href="https://facultyprofiles.tufts.edu/fahad-dogar/professional" class="button">Professional Activities</a>
+</span>
+
+				<span class="person-teaching-url">
+ <a href="https://facultyprofiles.tufts.edu/fahad-dogar/teaching" class="button">Courses / Teaching Activities</a>
+</span>
+
+			</div>
+
+		
+	</div>
+    </div>
+          <aside  class="main__sidebar">
+        
+				<div class="related-links__wrapper related-links__wrapper--buttons related-links__wrapper--blue component stack-tl stack-l">
+			<ul class="related-links related-links--buttons related-links--blue">
+				<li class="related-links__item">
+					<a href="https://facultyprofiles.tufts.edu/fahad-dogar" class="button button--alt-2">Full Profile<br><span class="facprofile-link">(facultyprofiles.tufts.edu)</span>
+					</a>
+				</li>
+																																																																																																																																																						<li class="related-links__item">
+							<a href="https://sites.google.com/site/fahaddogar/home" target="_blank" class="button button--alt-2">Personal</a>
+						</li>
+					
+																														</ul>
+		</div>
+	
+		
+	
+      </aside>
+      </main>
+
+  </div>
+
+<div id="block-clickstream" class="stack-l component">
+  
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script><script>
+<!--//--><![CDATA[// ><!--
+
+if (navigator.doNotTrack == 1) {
+  console.log(navigator.doNotTrack);
+}
+else {
+
+function setCookie(cname, cvalue, exdays) {
+              const d = new Date();
+              console.log(cname);
+              d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 10000));
+              let expires = "expires="+d.toUTCString();
+              document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
+            
+            function getCookie(cname) {
+                console.log(cname);
+              let name = cname + "=";
+              let ca = document.cookie.split(';');
+              for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                  c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                  return c.substring(name.length, c.length);
+                }
+              }
+              return "";
+            }
+            
+            function checkCookie() {
+                console.log('check cookie');
+              let user = getCookie("tufts");
+              if (user != "") {
+
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json","Connection", "keep-alive");
+
+var raw = JSON.stringify({
+  // "ip_address": obj.ip,
+  "url": window.location.href,
+  "referrer": Document.referrer, 
+  "datetime": moment().format('YYYY-MM-DD  hh:mm:ss'),
+  "user_agent": window.navigator.userAgent,
+  "cookie": user, // TODO
+  "action_name": "site vist",
+  "action_type": "view page"
+});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  mode: 'no-cors', 
+  redirect: 'follow'
+};
+
+fetch("https://pz6wk5gidb.execute-api.us-east-1.amazonaws.com/Prod/clickstream", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log("Success"))
+  .catch(error => console.log('error', error));
+
+
+              } else {
+                const d = new Date(); 
+                let user = Date.now() + window.location.host;
+                if (user != "" && user != null) {
+                  setCookie("tufts", user, 365);
+                  cookievalue = (user);
+                }
+              }
+            }
+window.onload = checkCookie;
+}
+
+
+//--><!]]>
+</script>
+
+  </div>
+
+  </div>
+
+    
+
+<footer  class="footer">
+  <div  class="footer__wrap">
+    <div  class="footer__main">
+      <div  class="footer__logo__wrap">
+                                  
+
+
+<a href="https://www.tufts.edu"  class="footer__logo">
+                
+  
+
+  <svg  class="footer__icon"
+
+    
+          aria-label="Tufts University"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#tufts-logo-full"></use>
+  </svg>
+            </a>
+            
+
+
+<a href="https://alumniandfriends.tufts.edu/brighterworld"  class="footer__logo">
+                
+  
+
+  <svg  class="footer__icon"
+
+    
+          aria-label="&quot;Brighter world&quot; The campaign for Tufts"
+    
+    
+      >
+              <use xlink:href="/cs/themes/custom/tuftstheme/dist/icons.4a714d64.svg#tufts-logo-campaign"></use>
+  </svg>
+            </a>
+        
+                </div>
+      <div  class="footer__column footer__column--left">
+                <div>
+    
+<nav aria-labelledby="block-footer-menu">
+      
+  <span id="block-footer-menu" >
+    
+<h2  id="block-footer" class="menu-heading">
+      Degree Programs
+  </h2>
+  </span>
+  
+
+        
+
+
+
+    
+                                  
+        
+<ul  class="footer__menu" >
+                      
+
+<li  class="footer__menu__item">
+                                          
+                
+  
+
+<a href="/cs/current-students/undergraduate"  class="footer__menu__link">
+      <span  class="text">
+      Bachelor&#039;s (Current Students)
+    </span>
+      </a>
+              </li>
+                    
+
+<li  class="footer__menu__item">
+                                          
+                
+  
+
+<a href="/cs/prospective-students/undergraduate"  class="footer__menu__link">
+      <span  class="text">
+      Bachelor&#039;s (Prospective Students)
+    </span>
+      </a>
+              </li>
+                    
+
+<li  class="footer__menu__item">
+                                          
+                
+  
+
+<a href="/cs/current-students/graduate/ms-and-fifth-year-masters-degree-program"  class="footer__menu__link">
+      <span  class="text">
+      Master&#039;s (Current Students)
+    </span>
+      </a>
+              </li>
+                    
+
+<li  class="footer__menu__item">
+                                          
+                
+  
+
+<a href="/cs/prospective-students/masters"  class="footer__menu__link">
+      <span  class="text">
+      Master&#039;s (Prospective Students)
+    </span>
+      </a>
+              </li>
+                    
+
+<li  class="footer__menu__item">
+                                          
+                
+  
+
+<a href="/cs/current-students/graduate/phd-programs"  class="footer__menu__link">
+      <span  class="text">
+      Doctoral (Current Students)
+    </span>
+      </a>
+              </li>
+                    
+
+<li  class="footer__menu__item">
+                                          
+                
+  
+
+<a href="/cs/prospective-students/phd"  class="footer__menu__link">
+      <span  class="text">
+      Doctoral (Prospective Students)
+    </span>
+      </a>
+              </li>
+                    
+
+<li  class="footer__menu__item">
+                                          
+                
+  
+
+<a href="/cs/current-students/graduate/certificate-and-post-baccalaureate-programs"  class="footer__menu__link">
+      <span  class="text">
+      Certificate/Post-Bac (Current Students)
+    </span>
+      </a>
+              </li>
+                    
+
+<li  class="footer__menu__item">
+                                          
+                
+  
+
+<a href="/cs/prospective-students/certificate-and-post-baccalaureate"  class="footer__menu__link">
+      <span  class="text">
+      Certificate/Post-Bac (Prospective Students)
+    </span>
+      </a>
+              </li>
+              </ul>
+  
+  </nav>
+
+  </div>
+
+          </div>
+      <div  class="footer__column footer__column--middle">
+                <div>
+    
+<nav aria-labelledby="block-footerundergraduatestudents-menu">
+      
+  <span id="block-footerundergraduatestudents-menu" >
+    
+<h2  id="block-footerundergraduatestudents" class="menu-heading">
+      Undergraduate Students
+  </h2>
+  </span>
+  
+
+        
+
+
+
+    
+                                  
+        
+<ul  class="footer__menu" >
+                      
+
+<li  class="footer__menu__item">
+                                                        
+                
+                  
+
+<a href="http://admissions.tufts.edu/apply"  aria-label="Apply to undergraduate programs" class="footer__menu__link">
+      <span  class="text">
+      Apply
+    </span>
+      </a>
+              </li>
+                    
+
+<li  class="footer__menu__item">
+                                                        
+                
+                  
+
+<a href="https://ugrad.admissions.tufts.edu/register/mailing-list"  aria-label="Request undergraduate program information" class="footer__menu__link">
+      <span  class="text">
+      Request Info
+    </span>
+      </a>
+              </li>
+                    
+
+<li  class="footer__menu__item">
+                                                        
+                
+                  
+
+<a href="http://admissions.tufts.edu/visit/plan-your-visit/"  aria-label="Plan an undergraduate experience" class="footer__menu__link">
+      <span  class="text">
+      Visit
+    </span>
+      </a>
+              </li>
+              </ul>
+  
+  </nav>
+
+<nav aria-labelledby="block-footergraduatestudents-menu">
+      
+  <span id="block-footergraduatestudents-menu" >
+    
+<h2  id="block-footergraduatestudents" class="menu-heading">
+      Graduate Students
+  </h2>
+  </span>
+  
+
+        
+
+
+
+    
+                                  
+        
+<ul  class="footer__menu" >
+                      
+
+<li  class="footer__menu__item">
+                                                        
+                
+                  
+
+<a href="https://gradase.admissions.tufts.edu/apply"  aria-label="Apply to graduate programs" class="footer__menu__link">
+      <span  class="text">
+      Apply
+    </span>
+      </a>
+              </li>
+                    
+
+<li  class="footer__menu__item">
+                                                        
+                
+                  
+
+<a href="https://gradase.admissions.tufts.edu/register/inquiryform"  aria-label="Request graduate program information" class="footer__menu__link">
+      <span  class="text">
+      Request Info
+    </span>
+      </a>
+              </li>
+                    
+
+<li  class="footer__menu__item">
+                                                        
+                
+                  
+
+<a href="https://asegrad.tufts.edu/graduate-admissions/plan-visit"  aria-label="Plan a graduate experience" class="footer__menu__link">
+      <span  class="text">
+      Visit
+    </span>
+      </a>
+              </li>
+              </ul>
+  
+  </nav>
+
+  </div>
+
+          </div>
+      <div  class="footer__column footer__column--right">
+                <div>
+    <div id="block-contact">
+  
+      <h2>Contact</h2>
+    
+        <p>Department of Computer Science<br />
+School of Engineering<br />
+Tufts University<br />
+420 Joyce Cummings Center<br />
+177 College Avenue<br />
+Medford, MA 02155<br />
+Phone: 617-627-2225 | Fax: 617-627-2227</p>
+
+<p> </p>
+
+<p><strong><a href="https://engineering.tufts.edu/cs/about/employment-opportunities">Employment Opportunities</a></strong></p>
+
+  </div>
+
+  </div>
+
+          </div>
+    </div>
+    <div  class="footer__bottom">
+          
+    
+<ul  class="social-menu" >
+            </ul>
+      <div  class="footer__copyright">
+        &copy; Tufts University 2022
+      </div>
+      <div  class="footer__legal">
+          
+
+
+<a href="http://oeo.tufts.edu/non-discrimination-statement"  class="footer__link">
+      <span  class="footer__text">
+      Non-Discrimination Statement
+    </span>
+      </a>
+          
+
+
+<a href="https://www.tufts.edu/about/privacy"  class="footer__link">
+      <span  class="footer__text">
+      Privacy
+    </span>
+      </a>
+      </div>
+      <div  class="footer__mobile-site">
+          
+
+
+<a href="https://m.tufts.edu"  class="footer__link">
+      <span  class="footer__text">
+      Tufts Mobile
+    </span>
+      </a>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/906","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"user":{"uid":0,"permissionsHash":"4070c7ad891f94704c018945042f94f6da00cce67b2ad78637292c14251c3aff"}}</script>
+<script src="/cs/sites/g/files/lrezom576/files/js/js_VgTAErmhIZn34vR-gmbQXG582bw4m52Q3rw_LuiX9D4.js"></script>
+<script src="/cs/themes/custom/tuftstheme/node_modules/%40dsdprivate/tufts-acsf-ds/components/01-atoms/images/icons/svgxuse.min.js?rl2ywv" defer></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-3800777426968b71f1f","applicationID":"1753969485","transactionName":"YAYBMkEECxVWVBcPDFlMIgVHDAoIGHMRExNWDz8IXAEAOnRYDRIRWA8PA0E5KwlTUjUPBkAgDAhHFwoKW1IRS11BCgYR","queueTime":0,"applicationTime":431,"atts":"TEECRAkeGBs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

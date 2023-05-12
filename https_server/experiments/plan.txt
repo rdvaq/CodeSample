@@ -1,0 +1,70 @@
+All times in s 
+
+improvement: 
+
+= 100 * ((server time) - (proxy time))/(server time)
+
+Experiment 1: 
+
+Start proxy with unused sockets = 0
+
+Have client connect to mcafee main site
+Have it connect to 10 resources on the same host 
+
+Start proxy with unused sockets = 10 
+
+Repeat above 
+
+css = close server sockets
+suss = save unused server sockets
+
+Experiment 2: 
+
+curl a variety of resources
+have client maintain connection (c program)
+
+Keeping connection open to client when both client and proxy are on same machine may not improve time too much
+Similar amount of time in making connections from proxy -> server as curl has to from client -> server (again proxy machine = client machine)
+
+Experiment 3:
+
+curl mcafee index with server 15 times 
+curl 10 mcafee resources (besides index) via proxy and cache them then curl mcafee index 
+repeat this 5 times 
+curl 20 mcafee resources (besides index) via proxy and cache them then curl mcafee index 
+repeat this 5 times 
+curl 40 mcafee resources (besides index) via proxy and cache them then curl mcafee index 
+repeat this 5 times 
+
+Saw that the number of modifications does not greatly increase response time nor does the process of making modifications based on entries in the cache
+does not cause a great time delay compared to server 
+
+Experiment 4: 
+
+tunnel through proxy for top 10 alexa urls that i recognize, taken from here: 
+https://www.htmlstrip.com/alexa-top-1000-most-visited-websites
+
+Experiment 5: 
+
+show increase cache size and doing searches has little impact 
+cache hits less than 1/100 th of a second regardless of size (time so low probably because on same machine, but hash table working properly)
+cache misses vary around 1/100 th of a second regardless of size 
+cache misses differ from server requests of the same resources by around 1/100 th of a second over varying sizes
+
+Experiment 6: 
+
+show increase banned lists should have no impact
+
+It does not regardless of the size of banlist (hash table working as expected)
+
+Experiment 7: 
+
+show that enforcing rate limiting has no impact 
+
+it does not have an impact (3 resources tested)
+
+
+
+
+
+

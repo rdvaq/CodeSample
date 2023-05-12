@@ -1,0 +1,13 @@
+file01 6 3600
+file02 6 3600
+file03 6 3600
+file04 6 3600
+file05 6 3600
+file06 6 3600
+file07 6 3600
+file08 6 3600
+file09 6 3600
+file10 6 3600
+file11 6 3600
+badfile 19 3600
+binfile 29240 3600

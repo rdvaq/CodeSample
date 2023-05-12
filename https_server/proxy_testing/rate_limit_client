@@ -1,0 +1,64 @@
+#!/bin/bash 
+
+# Run ./startlimitedproxy
+
+rm rate_limit_client.out
+make rate_limit_client.out
+
+./rate_limit_client.out
+
+curl -s http://www.cs.tufts.edu/comp/112/index.html -o out_files/server_response1
+curl -s http://www.testingmcafeesites.com/index.html -o out_files/server_response2
+echo -n -e "HTTP/1.1 429 Too Many Requests\r\n\r\n" > out_files/server_response3
+echo -n -e "HTTP/1.1 200 OK\r\n\r\n" > out_files/server_response4
+curl -s http://www.testingmcafeesites.com/testcat_al.html -o out_files/server_response5
+echo -n -e "HTTP/1.1 429 Too Many Requests\r\n\r\n" > out_files/server_response6
+
+diff1=$(diff out_files/proxy_response1 out_files/server_response1)
+diff2=$(diff out_files/proxy_response2 out_files/server_response2) 
+diff3=$(diff out_files/proxy_response3 out_files/server_response3) 
+diff4=$(diff out_files/proxy_response4 out_files/server_response4) 
+diff5=$(diff out_files/proxy_response5 out_files/server_response5) 
+diff6=$(diff out_files/proxy_response6 out_files/server_response6) 
+
+if [ "$diff1" != "" ]
+then
+	echo diff1 FAILED
+else
+	echo diff1 PASSED 
+fi
+
+if [ "$diff2" != "" ]
+then
+	echo diff2 FAILED
+else
+	echo diff2 PASSED 
+fi
+
+if [ "$diff3" != "" ]
+then
+	echo diff3 FAILED
+else
+	echo diff3 PASSED 
+fi
+
+if [ "$diff4" != "" ]
+then
+	echo diff4 FAILED
+else
+	echo diff4 PASSED 
+fi
+
+if [ "$diff5" != "" ]
+then
+	echo diff5 FAILED
+else
+	echo diff5 PASSED 
+fi
+
+if [ "$diff6" != "" ]
+then
+	echo diff6 FAILED
+else
+	echo diff6 PASSED 
+fi

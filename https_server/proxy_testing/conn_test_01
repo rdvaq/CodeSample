@@ -1,0 +1,14 @@
+#! /bin/bash
+
+port=9086
+site=("https://www.tufts.edu" "https://www.cmu.edu" "https://www.piazza.com"
+"https://www.linkedin.com/in/monacoanthony/"
+"https://engineering.tufts.edu/cs/people/faculty/fahad-dogar")
+
+for str in ${site[@]}; do
+    echo $str
+    curl -s -x localhost:$port $str > t_file
+    curl -s $str > r_file
+
+    diff t_file r_file
+done

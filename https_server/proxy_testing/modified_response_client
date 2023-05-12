@@ -1,0 +1,28 @@
+#!/bin/bash 
+
+rm modified_response_client.out
+make modified_response_client.out
+
+./modified_response_client.out
+
+curl -s http://www.testingmcafeesites.com/testcat_ac.html -o out_files/server_response1
+curl -s http://www.testingmcafeesites.com/testcat_al.html -o out_files/server_response2
+
+diff1=$(diff out_files/proxy_response1.html out_files/server_response1)
+diff2=$(diff out_files/proxy_response2.html out_files/server_response2) 
+
+if [ "$diff1" != "" ]
+then
+	echo diff1 FAILED
+else
+	echo diff1 PASSED 
+fi
+
+if [ "$diff2" != "" ]
+then
+	echo diff2 FAILED
+else
+	echo diff2 PASSED 
+fi
+
+echo SFTP and open out_files/proxy_response3.html to make sure that the ac and al links are red and the rest are blue 

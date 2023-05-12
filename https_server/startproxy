@@ -1,0 +1,5 @@
+#!/bin/bash
+        
+make clean
+make a.out
+./a.out 9086 2 banned_hosts.txt 20000 0 0 10 1

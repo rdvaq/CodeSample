@@ -1,0 +1,26 @@
+#!/bin/bash 
+
+rm halt_client3.out
+make halt_client3.out
+
+./halt_client3.out
+
+curl -s http://www.cs.tufts.edu/comp/112/index.html -o out_files/server_response1.html
+curl -s http://www.cs.cmu.edu/~prs/bio.html -o out_files/server_response2.html
+
+diff1=$(diff out_files/proxy_response1 out_files/server_response1.html)
+diff1=$(diff out_files/proxy_response2 out_files/server_response2.html)
+
+if [ "$diff1" != "" ]
+then
+	echo diff1 FAILED
+else
+	echo diff1 PASSED 
+fi
+
+if [ "$diff2" != "" ]
+then
+	echo diff2 FAILED
+else
+	echo diff2 PASSED 
+fi

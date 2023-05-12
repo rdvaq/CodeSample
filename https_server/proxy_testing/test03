@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm early_leaving_client.out
+make early_leaving_client.out
+./early_leaving_client.out

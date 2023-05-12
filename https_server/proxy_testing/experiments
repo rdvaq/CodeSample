@@ -1,0 +1,13 @@
+#!/bin/bash 
+
+./run_test http://www.cs.tufts.edu/comp/112/index.html
+./run_test http://www.cs.tufts.edu/comp/112/index.html
+./run_test http://www.cs.cmu.edu/~prs/bio.html
+./run_test http://www.cs.cmu.edu/~prs/bio.html
+./run_test http://www.cs.cmu.edu/~dga/dga-headshot.jpg
+./run_test http://www.cs.cmu.edu/~dga/dga-headshot.jpg
+
+while read p; do
+  ./run_test $p
+  ./run_test $p
+done <http_urls

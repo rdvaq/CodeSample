@@ -1,0 +1,25 @@
+#!/bin/bash
+PORT=9086
+file_alias=$1
+file=unset
+if [ "$file_alias" = "text1" ]; then
+    file=http://www.cs.tufts.edu/comp/112/index.html
+elif [ "$file_alias" = "text2" ]; then
+    file=http://www.cs.cmu.edu/~prs/bio.html
+elif [ "$file_alias" = "bin" ]; then
+    file=http://www.cs.cmu.edu/~dga/dga-headshot.jpg
+else
+    echo Unknown input!
+fi
+
+if [ "$file" != "unset" ]; then
+    curl -s -x localhost:${PORT} ${file} -o out_files/proxy_response
+    curl -s ${file} -o out_files/server_response
+    diff=$(diff out_files/proxy_response out_files/server_response) 
+    if [ "$diff" != "" ] 
+    then
+        echo FAILED
+    else
+        echo PASSED
+    fi
+fi

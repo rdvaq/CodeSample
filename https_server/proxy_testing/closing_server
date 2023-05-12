@@ -1,0 +1,31 @@
+#!/bin/bash 
+
+rm closing_server.out
+make closing_server.out
+
+echo sleeping 15s to ./startserver
+sleep 15
+
+curl -s localhost:9087/file01 -o out_files/server_response1
+curl -s localhost:9087/file02 -o out_files/server_response2
+
+./closing_server.out
+
+diff1=$(diff out_files/proxy_response1 out_files/server_response1)
+diff2=$(diff out_files/proxy_response2 out_files/server_response2)
+
+if [ "$diff1" != "" ]
+then
+	echo diff1 FAILED
+else
+	echo diff1 PASSED 
+fi
+
+if [ "$diff2" != "" ]
+then
+	echo diff2 FAILED
+else
+	echo diff2 PASSED 
+fi
+
+echo reminder to shut server down

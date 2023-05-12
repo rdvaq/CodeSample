@@ -1,0 +1,4 @@
+#!/bin/bash 
+
+file=$1
+curl -s -x localhost:9086 ${file} -o out_files/proxy_response
