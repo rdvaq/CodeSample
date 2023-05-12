@@ -1,6 +1,0 @@
-152
-in find_host, len is 17
-host is: www.cs.tufts.edu, len is: 17
-char:uchar:www.cs.tufts.edu
-new line
-
