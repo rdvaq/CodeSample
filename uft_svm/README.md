@@ -20,12 +20,15 @@ In the repository, you'll find these directories:
 ----------------------------------------------------------------------------------
 
 To run the uft:
+
     - uft <inlang>-<outlang> <file> 
     i.e. uft ho-vo sum.scm
     Type just uft into terminal for usage
 
 To run the svm:
+
     - svm <file>
 
 Together:
+
     - uft ho-vo sum.scm | svm
