@@ -9,7 +9,7 @@ In the repository, you'll find these directories:
 
   - `build` is a holding area for compiled files (`.o` and that ilk).
     If you are having trouble compiling, it is safe to remove
-    everything from it and start over.
+    everything from it and start over. (git ignored)
 
   - `src` contains sources that I provide and that you'll edit:
 
