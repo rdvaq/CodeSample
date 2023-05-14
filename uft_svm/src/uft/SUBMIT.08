@@ -1,0 +1,61 @@
+CS 106 Homework Submission
+
+What person or group is submitting this homework?
+
+  - Matt Zhou
+
+What work are you proud of?
+
+  - proud of implementing arity checks
+
+What code would you like help improving?  Are there bugs you'd like
+help finding during code review?
+
+  - I would like to review toReturn' and also dealing with funcall form 
+    in forEffect' and toReg'
+
+What code, if any, would you especially like the course staff to
+review?  Why?
+
+  - I think most material will be covered in the presentation, so no need this
+  time. Thank you!
+
+In this course, all code may be shared freely.  Aside from code that
+is distributed with the assignment, does your submission contain any
+other code that you got from someone else?  If so, what code is it
+(file names and line numbers please) and who supplied it?
+
+  - code original
+
+In response to last week's code review, have you made any material
+changes?  What were they?  By file name and line number, where are
+they found in the code?  If you remember, who helped you during code
+review?
+
+  - Yes, in vmrun.c line 217. Initially, I passed topmost function in the 
+  of the vm (i.e. the first ever functon) to lastglobalset. Thanks to Kresten,
+  it is now switched to the current function. 
+
+
+We have a plenary code review tomorrow.  Are you willing to present
+(as a group, if applicable)?
+
+  - Yes
+
+Supposing you are not selected to present at tomorrow's plenary code
+review, what code would you like to see presented?  What would you
+learn the most from?
+
+  - I would like have a quick look at the toReturn function, but I am mostly
+  interested in the presenter's test cases, how they came up with them and did 
+  they find any bugs. Also, a look at how people dealt with the updated 
+  'setglobal' projection would be nice too. 
+
+Again supposing you are not selected to present, are you willing to
+serve on the review panel? (Or if there are more than one of you, who
+is willing to serve?)
+
+  - Yes
+
+
+P.S. the tests for this week's module are found in src/tests/m8tests/

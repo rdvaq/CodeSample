@@ -1,0 +1,2 @@
+(define test () (lambda (f) (lambda (x) (lambda (y) (f x y)))))
+(check-expect ((((test) +) 2 ) 3) 5)

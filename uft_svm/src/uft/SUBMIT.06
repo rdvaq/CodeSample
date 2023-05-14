@@ -1,0 +1,59 @@
+CS 106 Homework Submission
+
+What person or group is submitting this homework?
+
+  - Matt Zhou
+
+What work are you proud of?
+
+  - proud of being able to run kn-vo and load the result into the svm
+
+What code would you like help improving?  Are there bugs you'd like
+help finding during code review?
+
+  - I would like help improving my toreg and forEffect funcs
+
+What code, if any, would you especially like the course staff to
+review?  Why?
+
+  - In codegen.sml line 62, I translate the funcode from kn to vs. I am 
+  not sure if the way I translated the body of the funcode from a kn expression
+  to a list of asm instructions is valid, though I don't really see other
+  obvious ways to do this. The code I wrote to translate the expression is 
+  essentially the big forEffect function, so, not sure if its right. 
+
+In this course, all code may be shared freely.  Aside from code that
+is distributed with the assignment, does your submission contain any
+other code that you got from someone else?  If so, what code is it
+(file names and line numbers please) and who supplied it?
+
+  - all work original
+
+In response to last week's code review, have you made any material
+changes?  What were they?  By file name and line number, where are
+they found in the code?  If you remember, who helped you during code
+review?
+
+  - Yes.
+  - file knembed.sml line 33, pattern match on triple,  credit to vivian
+  - file knembed.sml exp function (line 28), changed my name expressions 
+  from S.lit to S.VAR, credit to kresten 
+
+
+We have a plenary code review tomorrow.  Are you willing to present
+(as a group, if applicable)?
+
+  - yes
+
+Supposing you are not selected to present at tomorrow's plenary code
+review, what code would you like to see presented?  What would you
+learn the most from?
+
+  - A quick look at toReg' and forEffect' would be nice, but also I am 
+  interested in seeing how/what people came up with in their test cases. 
+
+Again supposing you are not selected to present, are you willing to
+serve on the review panel? (Or if there are more than one of you, who
+is willing to serve?)
+
+  - yes

@@ -1,0 +1,17 @@
+*~
+*.o
+.cm
+*.ui
+*.uo
+/build/*
+/bin/svm
+/bin/svm-dis
+/bin/svm-opcodes
+/bin/svm-test
+/bin/vscheme
+/bin/vscheme.opt
+/bin/svm-debug-test
+/bin/svm-loader-instructions
+/bin/uft.opt
+/bin/uft
+/src/uft/*.mlb

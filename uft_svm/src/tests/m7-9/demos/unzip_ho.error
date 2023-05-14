@@ -1,0 +1,20 @@
+(define list1 (x)     (cons x '()))
+(define list2 (x y)   (cons x (list1 y)))
+(define cadr (xs) 
+        (car 
+            (cdr xs)))
+(define map (f xs)
+  (if (null? xs)
+    '()
+    (cons (f (car xs)) 
+          (map f (cdr xs)))))
+
+(define unzip (ps)
+    (if (null? ps)
+        '(() ())
+        (list2 (map car ps) 
+               (map cadr ps)))) 
+
+
+(check-expect (unzip '((I Magnin) (U ) (E Coli))) 
+              '((I U E) (Magnin Thant Coli)))

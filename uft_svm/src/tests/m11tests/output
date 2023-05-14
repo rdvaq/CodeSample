@@ -1,0 +1,1274 @@
+==875636== Memcheck, a memory error detector
+==875636== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==875636== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==875636== Command: svm
+==875636== 
+==875636== Illegal memory pool address
+==875636==    at 0x401C1C: alloc_small (vmheap.c:292)
+==875636==    by 0x401CC1: vmalloc_raw (vmheap.c:312)
+==875636==    by 0x401E29: copy_function (vmheap.c:437)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x4045A1: vmrun (vmrun.c:208)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==875636== 
+==875636== Illegal memory pool address
+==875636==    at 0x401C1C: alloc_small (vmheap.c:292)
+==875636==    by 0x401CC1: vmalloc_raw (vmheap.c:312)
+==875636==    by 0x401DB0: copy_string (vmheap.c:429)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x4024F8: scan_vmstate (vmheap.c:640)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x4045A1: vmrun (vmrun.c:208)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==875636== 
+==875636== Illegal memory pool address
+==875636==    at 0x401C1C: alloc_small (vmheap.c:292)
+==875636==    by 0x401CC1: vmalloc_raw (vmheap.c:312)
+==875636==    by 0x403C58: vmrun (vmrun.c:131)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==875636== 
+==875636== Illegal memory pool address
+==875636==    at 0x401C1C: alloc_small (vmheap.c:292)
+==875636==    by 0x401CC1: vmalloc_raw (vmheap.c:312)
+==875636==    by 0x401EA2: copy_block (vmheap.c:445)
+==875636==    by 0x402083: forward_block (vmheap.c:504)
+==875636==    by 0x40227E: scan_value (vmheap.c:557)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x401E32: copy_function (vmheap.c:437)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959c0 is 144 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x4C41253: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401E4F: copy_function (vmheap.c:438)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959c0 is 144 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x4C4125B: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401E4F: copy_function (vmheap.c:438)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959c8 is 152 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x4C41263: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401E4F: copy_function (vmheap.c:438)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959d0 is 160 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x4C4126B: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401E4F: copy_function (vmheap.c:438)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959d8 is 168 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x4C412A8: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401E4F: copy_function (vmheap.c:438)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a00 is 208 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 2
+==875636==    at 0x4C41303: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401E4F: copy_function (vmheap.c:438)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a10 is 224 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x401EAB: copy_block (vmheap.c:445)
+==875636==    by 0x402083: forward_block (vmheap.c:504)
+==875636==    by 0x40227E: scan_value (vmheap.c:557)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a20 is 240 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x4C41253: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401EC8: copy_block (vmheap.c:446)
+==875636==    by 0x402083: forward_block (vmheap.c:504)
+==875636==    by 0x40227E: scan_value (vmheap.c:557)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a20 is 240 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x4C4125B: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401EC8: copy_block (vmheap.c:446)
+==875636==    by 0x402083: forward_block (vmheap.c:504)
+==875636==    by 0x40227E: scan_value (vmheap.c:557)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a28 is 248 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x4C41263: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401EC8: copy_block (vmheap.c:446)
+==875636==    by 0x402083: forward_block (vmheap.c:504)
+==875636==    by 0x40227E: scan_value (vmheap.c:557)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a30 is 256 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x4C4126B: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401EC8: copy_block (vmheap.c:446)
+==875636==    by 0x402083: forward_block (vmheap.c:504)
+==875636==    by 0x40227E: scan_value (vmheap.c:557)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a38 is 264 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x4C412A8: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401EC8: copy_block (vmheap.c:446)
+==875636==    by 0x402083: forward_block (vmheap.c:504)
+==875636==    by 0x40227E: scan_value (vmheap.c:557)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a40 is 272 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x401DB9: copy_string (vmheap.c:429)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a50 is 288 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x4C41253: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401DD6: copy_string (vmheap.c:430)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a50 is 288 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x4C4125B: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401DD6: copy_string (vmheap.c:430)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a58 is 296 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x4C41263: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401DD6: copy_string (vmheap.c:430)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a60 is 304 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x4C4126B: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401DD6: copy_string (vmheap.c:430)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a68 is 312 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 2
+==875636==    at 0x4C41303: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401DD6: copy_string (vmheap.c:430)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a70 is 320 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x401DB9: copy_string (vmheap.c:429)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x4024F8: scan_vmstate (vmheap.c:640)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a80 is 336 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x4C412A8: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401DD6: copy_string (vmheap.c:430)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x4024F8: scan_vmstate (vmheap.c:640)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595ad0 is 416 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 1
+==875636==    at 0x4C41334: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401DD6: copy_string (vmheap.c:430)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x4024F8: scan_vmstate (vmheap.c:640)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595b0c is 476 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 4
+==875636==    at 0x402146: scan_block (vmheap.c:525)
+==875636==    by 0x402385: scan_forwarded_payload (vmheap.c:594)
+==875636==    by 0x402673: gc (vmheap.c:687)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a28 is 248 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 4
+==875636==    at 0x40221E: scan_value (vmheap.c:544)
+==875636==    by 0x402173: scan_block (vmheap.c:527)
+==875636==    by 0x402385: scan_forwarded_payload (vmheap.c:594)
+==875636==    by 0x402673: gc (vmheap.c:687)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a30 is 256 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x402239: scan_value (vmheap.c:549)
+==875636==    by 0x402173: scan_block (vmheap.c:527)
+==875636==    by 0x402385: scan_forwarded_payload (vmheap.c:594)
+==875636==    by 0x402673: gc (vmheap.c:687)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a38 is 264 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x402249: scan_value (vmheap.c:549)
+==875636==    by 0x402173: scan_block (vmheap.c:527)
+==875636==    by 0x402385: scan_forwarded_payload (vmheap.c:594)
+==875636==    by 0x402673: gc (vmheap.c:687)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a38 is 264 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x4053C6: keep_live (vmstring.c:98)
+==875636==    by 0x405422: VMString_drop_dead_strings (vmstring.c:107)
+==875636==    by 0x40268E: gc (vmheap.c:691)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595af8 is 456 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 4
+==875636==    at 0x40335D: vmrun (vmrun.c:58)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959e4 is 180 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 4
+==875636==    at 0x402473: scan_vmstate (vmheap.c:631)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959d8 is 168 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401FDA: forward_function (vmheap.c:484)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959c0 is 144 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401DED: copy_function (vmheap.c:435)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959c0 is 144 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 4
+==875636==    at 0x4015B7: vmsize_fun_payload (vmsizes.h:34)
+==875636==    by 0x401E19: copy_function (vmheap.c:436)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959d4 is 164 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x4C41240: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401E4F: copy_function (vmheap.c:438)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959c0 is 144 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x4C41257: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401E4F: copy_function (vmheap.c:438)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959c8 is 152 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x4C4125F: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401E4F: copy_function (vmheap.c:438)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959d0 is 160 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x4C41267: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401E4F: copy_function (vmheap.c:438)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959d8 is 168 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x4C4124C: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401E4F: copy_function (vmheap.c:438)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959e0 is 176 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x4C412A5: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401E4F: copy_function (vmheap.c:438)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a00 is 208 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 2
+==875636==    at 0x4C41300: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401E4F: copy_function (vmheap.c:438)
+==875636==    by 0x401FED: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a10 is 224 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x401FF2: forward_function (vmheap.c:485)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959c0 is 144 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401FF9: forward_function (vmheap.c:490)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959c0 is 144 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401FA6: forward_string (vmheap.c:473)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a50 is 288 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401D74: copy_string (vmheap.c:427)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a50 is 288 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401617: vmsize_string_payload (vmsizes.h:52)
+==875636==    by 0x401DA0: copy_string (vmheap.c:428)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a58 is 296 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x4C41240: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401DD6: copy_string (vmheap.c:430)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a50 is 288 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x4C41257: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401DD6: copy_string (vmheap.c:430)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a58 is 296 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x4C4125F: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401DD6: copy_string (vmheap.c:430)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a60 is 304 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x4C41267: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401DD6: copy_string (vmheap.c:430)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a68 is 312 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 2
+==875636==    at 0x4C41300: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401DD6: copy_string (vmheap.c:430)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a70 is 320 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x401FBE: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a50 is 288 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401FC5: forward_string (vmheap.c:480)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x40249C: scan_vmstate (vmheap.c:633)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a50 is 288 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401FA6: forward_string (vmheap.c:473)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x4024F8: scan_vmstate (vmheap.c:640)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a80 is 336 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401D74: copy_string (vmheap.c:427)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x4024F8: scan_vmstate (vmheap.c:640)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a80 is 336 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid write of size 8
+==875636==    at 0x401FBE: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x4024F8: scan_vmstate (vmheap.c:640)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a80 is 336 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401FC5: forward_string (vmheap.c:480)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x4024F8: scan_vmstate (vmheap.c:640)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a80 is 336 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401FDA: forward_function (vmheap.c:484)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x4024F8: scan_vmstate (vmheap.c:640)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959c0 is 144 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401FF9: forward_function (vmheap.c:490)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x4024F8: scan_vmstate (vmheap.c:640)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959c0 is 144 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x4C412A5: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401DD6: copy_string (vmheap.c:430)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x4024F8: scan_vmstate (vmheap.c:640)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595ad0 is 416 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 1
+==875636==    at 0x4C41330: memmove (vg_replace_strmem.c:1382)
+==875636==    by 0x401DD6: copy_string (vmheap.c:430)
+==875636==    by 0x401FB9: forward_string (vmheap.c:475)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x4024F8: scan_vmstate (vmheap.c:640)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595b0c is 476 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401FDA: forward_function (vmheap.c:484)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x402542: scan_vmstate (vmheap.c:645)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959c0 is 144 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401FF9: forward_function (vmheap.c:490)
+==875636==    by 0x402261: scan_value (vmheap.c:553)
+==875636==    by 0x402542: scan_vmstate (vmheap.c:645)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959c0 is 144 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401FDA: forward_function (vmheap.c:484)
+==875636==    by 0x4025AA: scan_vmstate (vmheap.c:654)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959c0 is 144 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401FF9: forward_function (vmheap.c:490)
+==875636==    by 0x4025AA: scan_vmstate (vmheap.c:654)
+==875636==    by 0x402649: gc (vmheap.c:680)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x55959c0 is 144 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401FA6: forward_string (vmheap.c:473)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x402173: scan_block (vmheap.c:527)
+==875636==    by 0x402385: scan_forwarded_payload (vmheap.c:594)
+==875636==    by 0x402673: gc (vmheap.c:687)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a80 is 336 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x401FC5: forward_string (vmheap.c:480)
+==875636==    by 0x402244: scan_value (vmheap.c:549)
+==875636==    by 0x402173: scan_block (vmheap.c:527)
+==875636==    by 0x402385: scan_forwarded_payload (vmheap.c:594)
+==875636==    by 0x402673: gc (vmheap.c:687)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595a80 is 336 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x4053A0: keep_live (vmstring.c:90)
+==875636==    by 0x405422: VMString_drop_dead_strings (vmstring.c:107)
+==875636==    by 0x40268E: gc (vmheap.c:691)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595ae0 is 432 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x4053B3: keep_live (vmstring.c:98)
+==875636==    by 0x405422: VMString_drop_dead_strings (vmstring.c:107)
+==875636==    by 0x40268E: gc (vmheap.c:691)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595af8 is 456 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x4053BB: keep_live (vmstring.c:98)
+==875636==    by 0x405422: VMString_drop_dead_strings (vmstring.c:107)
+==875636==    by 0x40268E: gc (vmheap.c:691)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595ae0 is 432 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+==875636== Invalid read of size 8
+==875636==    at 0x4053CE: keep_live (vmstring.c:99)
+==875636==    by 0x405422: VMString_drop_dead_strings (vmstring.c:107)
+==875636==    by 0x40268E: gc (vmheap.c:691)
+==875636==    by 0x403BC5: vmrun (vmrun.c:121)
+==875636==    by 0x40CF45: dofile (svm.c:38)
+==875636==    by 0x40D075: main (svm.c:59)
+==875636==  Address 0x5595ae0 is 432 bytes inside a managed page of size 4,096 client-defined
+==875636==    at 0x40292E: acquire_available_page (vmheap.c:750)
+==875636==    by 0x40298B: newpage (vmheap.c:771)
+==875636==    by 0x402A05: take_available_page (vmheap.c:783)
+==875636==    by 0x401890: heap_init (vmheap.c:207)
+==875636==    by 0x40CF93: main (svm.c:47)
+==875636== 
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+here
+The only test passed.
+==875636== 
+==875636== HEAP SUMMARY:
+==875636==     in use at exit: 0 bytes in 0 blocks
+==875636==   total heap usage: 1,042 allocs, 464 frees, 516,152 bytes allocated
+==875636== 
+==875636== All heap blocks were freed -- no leaks are possible
+==875636== 
+==875636== For lists of detected and suppressed errors, rerun with: -s
+==875636== ERROR SUMMARY: 17290 errors from 73 contexts (suppressed: 0 from 0)

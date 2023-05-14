@@ -1,0 +1,312 @@
+;;;;;;;;;;;;;;; COMP 105 CONTINUATIONS ASSIGNMENT ;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;  AUTHOR REDACTED
+;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; PREDICATES or HELPER FUNCTIONS NEEDED FOR ASSIGNMENT
+
+(record not [arg])
+(record or  [args])
+(record and [args])
+
+(define value? (_) #t) ;; tell if the argument is a value
+    (check-assert [value? 2])
+
+(define even? (x) (= (mod x 2) 0))
+
+
+;; (all? val xs) Takes in a predicate, `p?`, and a list, `xs`. Returns a bool
+;;               indicating whether all of the elements in list xs pass the 
+;;               predicate p?
+
+(define all? (p? xs) 
+    (foldr (lambda (y val?) (if val? (p? y) #f)) #t xs))
+
+    (check-expect [all? even? '(2 4 6 9 1)] #f)
+    (check-expect [all? even? '(2 4 6 8 10)] #t)
+
+
+;; (exists? p? xs) Takes in a predicate, `p?`, and a list, `xs`. Returns a bool
+;;                 indicating whether any element in list xs passes predicate 
+;;                 p?
+
+(define exists? (p? xs) 
+    (foldr (lambda (y val?) (if val? val? (p? y))) #f xs))
+
+    (check-expect [exists? even? '(2 3 6 9 1)] #t)
+    (check-expect [exists? even? '(1 3 5 7)] #f)
+    (check-expect [exists? (lambda (x) (= x 37)) '(1 2 37)] #t)
+    (check-expect [exists? (lambda (x) (= x 37)) '(1 2 3)] #f)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;
+;;;;  Problem L
+
+;; (list-of? A? '()) == #t
+;; (list-of? A? v) == #f
+;; (list-of A? (cons v vs)) == (and (A? v) (A? vs))
+
+(define list-of? (A? v)
+    [if (null? v)
+        #t
+        [if (atom? v)
+            #f
+            [and (A? (car v)) (list-of? A? (cdr v))]
+            ]
+        ]
+    )
+    (check-assert [list-of? value? '()])
+    (check-assert [list-of? value? '(Q T π)])
+    (check-assert (not [list-of? value? 'Q]))
+
+    (check-assert [list-of? even? '()])
+    (check-assert [list-of? even? '(2 4 6 8)])
+    (check-assert (not [list-of? even? '(1 2 4 6 8)]))
+    (check-assert (not [list-of? even? '2]))
+    (check-assert (not [list-of? even? '1]))
+
+    (check-assert [list-of? number? '(1 2 5 6 8)])
+    (check-assert (not [list-of? number? '(1 A 5 6 8)]))
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;
+;;;;  Problem F
+
+;; (formula? '()) == #f
+;; (formula? #t) == #t
+;; (formula? #f) == #t
+;; (formula? (make-not v)) == (formula? v)
+;; (formula? (make-or vs)) == (all? formula? vs)
+;; (formula? (make-and vs)) == (all? formula? vs)
+
+
+(define formula? (v) 
+    (cond ((null? v) #f)
+          ((or (= v #t) (= v #f)) #t)
+          ((not? v) (formula? (not-arg v)))
+          ((or? v) (all? formula? (or-args v)))
+          ((and? v) (all? formula? (and-args v)))
+          (#t #f))
+    )
+    
+    (check-assert (not [formula? '()]))
+    (check-assert [formula? #t])
+    (check-assert [formula? (list-of? value? '())])
+
+    (check-assert [formula? (make-not #t)])
+    (check-assert [formula? (make-or '(#t #f))])
+    (check-assert [formula? (make-and '(#t #f))])
+
+    (check-assert [formula? (make-and (list2 (make-not #f) 
+                                             (make-or (cons #f '(#t #f)))))])
+    (check-assert (not [formula? 'a]))
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;
+;;;;  Problem E
+
+;; (eval-formula s env) == (find s env), given s is a symbol
+;; (eval-formula (make-not v) env) == (not (eval-fomula v env)) 
+;; (eval-formula (make-or vs) env) == (exists? (lambda (x) 
+;;                                                     (eval-formula x envs))
+;;                                             (or-args f))
+;; (eval-formula (make-and vs) env) == (all? (lambda (x) (eval-formula x envs))
+;;                                           (or-args f))
+
+(define eval-formula (f env)
+    (cond 
+          ((symbol? f) (find f env))
+          ((not? f) (not (eval-formula (not-arg f) env)))
+          ((or? f) (exists? (lambda (x) (eval-formula x env)) (or-args f)))
+          ((and? f) (all? (lambda (x) (eval-formula x env)) (and-args f)))
+          (#t (error 'runtime-error))
+        )
+    )
+
+;;    (check-error [eval-formula 2 '()])
+    (check-assert [eval-formula (make-not 'a) '((a #f))])
+    (check-assert (not [eval-formula (make-not 'a) '((a #t))]))
+
+    (check-assert [eval-formula (make-or '(a b)) '((a #f) (b #t))])
+    (check-assert (not [eval-formula (make-or '(a b)) '((a #f) (b #f))]))
+
+    (check-assert [eval-formula (make-and '(a b)) '((a #t) (b #t))])
+    (check-assert (not [eval-formula (make-and '(a b)) '((a #f) (b #t))]))
+
+    (check-assert (not [eval-formula (make-or (list2 'a (make-not 'b))) 
+                                     '((a #f) (b #t))]))
+
+    (check-assert [eval-formula (make-and 
+                                    (list2 'c 
+                                           (make-or (list2 'a (make-not 'b)))))
+                                '((a #f) (b #f) (c #t))])
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;
+;;;;  Problem S
+
+;; (find-formula-asst x bool cur fail succeed) 
+;;                    == (find-formula-symbol x bool cur fail succeed), 
+;;                       where x is a symbol
+;; (find-formula-asst (make-not f)  bool cur fail succeed) 
+;;                    == (find-formula-asst f (not bool) cur fail succeed)
+
+;; (find-formula-asst (make-or  fs) #t   cur fail succeed) 
+;;                    == (find-any-asst fs #t cur fail succeed)
+;; (find-formula-asst (make-or  fs) #f   cur fail succeed) 
+;;                    == (find-all-asst fs #f cur fail succeed)
+
+;; (find-formula-asst (make-and fs) #t   cur fail succeed)
+;;                    == (find-all-asst fs #t cur fail succeed)
+;; (find-formula-asst (make-and fs) #f   cur fail succeed) 
+;;                    == (find-any-asst fs #f cur fail succeed)
+
+
+;; (find-all-asst '()         bool cur fail succeed) 
+;;                == (succeed cur fail)
+;; (find-all-asst (cons f fs) bool cur fail succeed)
+;;                == (find-formula-asst f bool cur fail
+;;                                      (lambda (curr fail) 
+;;                                              (find-all-asst fs bool cur
+;;                                                             fail succeed)))
+
+
+;; (find-any-asst '()         bool cur fail succeed) 
+;;                 == (fail)
+;; (find-any-asst (cons f fs) bool cur fail succeed) 
+;;                 == (find-formula-asst f bool cur 
+;;                                       (lambda (curr fail) 
+;;                                               (find-any-asst fs bool cur 
+;;                                                              fail succeed))
+;;                                        succeed)
+
+
+;; (find-formula-symbol x bool cur fail succeed) 
+;;                      == (succeed (bind x bool cur) fail), 
+;;                          where x is not bound in cur
+;; (find-formula-symbol x bool cur fail succeed) == (succeed cur fail), 
+;;                                                  where x is bool in cur
+;; (find-formula-symbol x bool cur fail succeed) == (fail), 
+;;                                                 where x is (not bool) in cur
+
+(define find-formula-true-asst (f fail succ)
+    (letrec (
+             [find-formula-asst (lambda (f bool cur fail succ) 
+                                   (cond 
+                                        ((symbol? f) 
+                                         (find-formula-symbol f bool cur fail
+                                                              succ))
+                                        ((not? f) 
+                                         (find-formula-asst (not-arg f) 
+                                                            (not bool) cur fail
+                                                            succ))
+                                        ((or? f) 
+                                         (if bool (find-any-asst (or-args f)
+                                                                 #t cur fail
+                                                                 succ)
+                                                  (find-all-asst (or-args f)
+                                                                 #f cur fail
+                                                                 succ)))
+                                        ((and? f) 
+                                         (if bool (find-all-asst (and-args f) 
+                                                                 #t cur fail
+                                                                 succ)
+                                                  (find-any-asst (and-args f) 
+                                                                 #f cur fail 
+                                                                 succ)))
+                                        ))]
+             [find-all-asst (lambda (ls bool cur fail succ)
+                               (if (null? ls) (succ cur fail) 
+                                   (find-formula-asst (car ls) bool cur fail
+                                                      (lambda (cur resume) 
+                                                              (find-all-asst 
+                                                                (cdr ls)
+                                                                 bool cur
+                                                                 resume succ)))
+                                    ))]
+             [find-any-asst (lambda (ls bool cur fail succ)
+                               (if (null? ls) (fail) 
+                                   (find-formula-asst (car ls) bool cur
+                                                      (lambda (cur resume) 
+                                                              (find-any-asst
+                                                                (cdr ls)
+                                                                 bool cur
+                                                                 resume succ))
+                                                       succ)
+                                    ))]
+             [find-formula-symbol (lambda (x bool cur fail succ) 
+                                     (if (not (null? (find x cur)))
+                                         (if (= bool (find x cur)) 
+                                             (succ cur fail)
+                                             (fail))
+                                         (succ (bind x bool cur) fail)
+                                        ))]) 
+            (find-formula-asst f #t '() fail succ)))
+
+
+
+    ;; PROVIDED TESTS FROM HW ASSIGNMENT
+    (check-assert (function? find-formula-true-asst))     ; correct name
+;;    (check-error (find-formula-true-asst))                ; not 0 arguments
+;;    (check-error (find-formula-true-asst 'x))             ; not 1 argument
+;;    (check-error (find-formula-true-asst 'x (lambda () 'fail)))  ; not 2 args
+;;    (check-error (find-formula-true-asst 'x (lambda () 'fail) 
+;;                                            (lambda (c r) 'succeed) 'z)) 
+;;                                            ;; not 4 args
+;;
+;;    (check-error (find-formula-true-asst 'x (lambda () 'fail) 
+;;                                            (lambda () 'succeed)))
+;;        ; success continuation expects 2 arguments, not 0
+;;    (check-error (find-formula-true-asst 'x (lambda () 'fail) 
+;;                                            (lambda (_) 'succeed)))
+;;        ; success continuation expects 2 arguments, not 1
+;;    (check-error (find-formula-true-asst
+;;                       (make-and (list2 'x (make-not 'x)))
+;;                       (lambda (_) 'fail)
+;;                       (lambda (_) 'succeed)))
+;;        ; failure continuation expects 0 arguments, not 1
+
+
+    (check-expect   ; x can be solved
+       (find-formula-true-asst 'x
+                               (lambda () 'fail)
+                               (lambda (cur resume) 'succeed))
+       'succeed)
+
+    (check-expect   ; x is solved by '((x #t))
+       (find-formula-true-asst 'x
+                               (lambda () 'fail)
+                               (lambda (cur resume) (find 'x cur)))
+       #t)
+
+    (check-expect   ; (make-not 'x) can be solved
+       (find-formula-true-asst (make-not 'x)
+                               (lambda () 'fail)
+                               (lambda (cur resume) 'succeed))
+       'succeed)
+
+    (check-expect   ; (make-not 'x) is solved by '((x #f))
+       (find-formula-true-asst (make-not 'x)
+                               (lambda () 'fail)
+                               (lambda (cur resume) (find 'x cur)))
+       #f)
+
+    (check-expect   ; (make-and (list2 'x (make-not 'x))) cannot be solved
+       (find-formula-true-asst (make-and (list2 'x (make-not 'x)))
+                               (lambda () 'fail)
+                               (lambda (cur resume) 'succeed))
+       'fail)
+
+
+;;; failing test case
+(define nr.one-solution (f)
+  (find-formula-true-asst f (lambda () 'FAIL) (lambda (answer _) answer)))
+
+(check-expect (nr.one-solution (make-and (list2 (make-not 'x) (make-or '(x x))))) 'FAIL)

@@ -1,0 +1,13 @@
+.load module 12
+loadliteral 13 124
+setglobal 13 string 1 120
+getglobal 1 string 1 120
+pbool 2 1
+negate 2 2
+if 2
+print 13
+goto 2
+halt 
+pbool 3 1   
+check 2 string 2 114 50
+expect 3 string 1 116

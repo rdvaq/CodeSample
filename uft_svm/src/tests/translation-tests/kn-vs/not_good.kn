@@ -1,0 +1,20 @@
+#t
+r0
+(let* ([r0 1]
+       [r1 2]) 
+  (+ r0 r1))
+(let ([r0 (lambda (r0) (* r0 r0))]) (set square r0))
+(let* ([r3 1]
+       [r2 square]) 
+  (r2 r3))
+(let ([r0 1]) (if r0 1 2))
+(let ([r0 1]) (- r0 r0))
+(let* ([r0 1]
+       [r3 2]
+       [r2 square]) 
+  (begin (r2 r3) (r0)))
+(let ([r0 1]) (set g r0))
+(let* ([r0 1]
+       [r1 2]) 
+  (set r0 r1))
+(while (let ([r0 2]) r0) 1)

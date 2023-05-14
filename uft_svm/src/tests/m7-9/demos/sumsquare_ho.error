@@ -1,0 +1,5 @@
+(define square (x) (* x x))
+(define sum_squares (x y) 
+    (+ (square) 
+    (square y)))
+(sum_squares 10 2)

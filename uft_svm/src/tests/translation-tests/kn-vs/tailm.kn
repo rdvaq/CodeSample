@@ -1,0 +1,17 @@
+(let ([r0 (lambda (r1 r2 r3)
+        (let* ([r4 0]
+               [r5 (= r1 r4)])
+               (if r5
+                   r3
+                   (let* ([r7 (+ r2 r3)]
+                          [r4 1]
+                          [r5 (- r1 r4)]
+                          [r6 r2]
+                          [r4 times-plus])
+                          (r4 r5 r6 r7)))))])
+    (set times-plus r0))
+
+(begin
+   (let* ([r0 times-plus] [r1 1200000] [r2 12] [r3 99] [r0 (r0 r1 r2 r3)]) 
+         (check r0 '1200000*12+99))
+   (let* ([r0 14400099]) (expect r0 'is14400099)))

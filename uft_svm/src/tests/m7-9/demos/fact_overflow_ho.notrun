@@ -1,0 +1,4 @@
+(define fact (n)
+    (* n (fact (- n 1))))
+
+(check-expect (fact 1000) `should_error)

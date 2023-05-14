@@ -1,0 +1,72 @@
+CS 106 Homework Submission
+
+What person or group is submitting this homework?
+
+  - Matt Zhou  
+
+What work are you proud of?
+
+  - I enjoyed and am proud of implementing the get_instruction function.
+    It made me think about the differences between vm insturctions and the 
+    vo code.
+
+What code would you like help improving?  Are there bugs you'd like
+help finding during code review?
+
+  - I would like to improve my get_instruction function. In paticular,
+  I was wondering if there are any bugs in the way that I parse strings
+
+What code, if any, would you especially like the course staff to
+review?  Why?
+
+  - I would like the course staff to look at my loadfun & get instruction
+  function. In paticular, I am a bit weary about the way I deal with maxreg. 
+  In get_instruction, I essentially copy the SEE macro in iparser to maintain
+  maxreg. In loadfun, I set the initial value of nregs to 0 and pass it to
+  get instruction to update it. Finally, I increase the value of nregs by 1. 
+  This feels like a correct way to get nregs, but I'm not sure. 
+
+In this course, all code may be shared freely.  Aside from code that
+is distributed with the assignment, does your submission contain any
+other code that you got from someone else?  If so, what code is it
+(file names and line numbers please) and who supplied it?
+
+  - Submission does not contain code from others
+    The code in vmstate.c borrows heavily from the model implementation,
+    especially the global slot function. 
+
+In response to last week's code review, have you made any material
+changes?  What were they?  By file name and line number, where are
+they found in the code?  If you remember, who helped you during code
+review?
+
+  - I've made changes to the representation of the vmstate in response to 
+  the code review. I've swapped the table that was used to implement the 
+  global pool with two "parallel" arrays (one for value and one for names).
+  This change is reflected in vmstate.h line 31 & 32. 
+  I've added in extra variables to track the state of the literal pool and 
+  global pool arrays (reflected in vmstate.h line 27 & 28).
+  I've also added in a sturct VMFunction* in the vmstate to record the function
+  that's currently being executed (reflected in vmstate.h line 25).
+
+  All changes above attributed to nr.
+  
+Side Note: .vo files are in the subdir vo_files
+
+We have a plenary code review tomorrow.  Are you willing to present
+(as a group, if applicable)?
+
+  - Not applicable
+
+Supposing you are not selected to present at tomorrow's plenary code
+review, what code would you like to see presented?  What would you
+learn the most from?
+
+  - Not applicable
+
+Again supposing you are not selected to present, who in your group is
+willing to serve on the review panel?
+
+  - Not applicable
+
+

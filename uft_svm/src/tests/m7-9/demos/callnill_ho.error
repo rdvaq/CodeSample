@@ -1,0 +1,10 @@
+
+(define subfun_2 (x) (subfun_3))
+
+(define subfun_1 (x)
+        (+ (subfun_2 x) 2))
+
+(define callnill (x) 
+    (+ (subfun_1 x) 1))
+
+(callnill 1)

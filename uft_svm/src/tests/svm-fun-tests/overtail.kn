@@ -1,0 +1,19 @@
+(let ([r0 (lambda (r1 r2)
+        (let* ([r3 0]
+               [r8 (= r1 r3)])
+               (if r8
+                   r2
+                   (let* ([r6 (* r2 r1)]
+                          [r4 1]
+                          [r5 (- r1 r4)]
+                          [r4 tailfact])
+                          (r4 r5 r6)))))])
+      (set tailfact r0))
+
+(begin
+   (let* ([r0 tailfact] [r1 10] [r2 1] [r0 (r0 r1 r2)]) (check r0 '10-factorial))
+   (let* ([r0 3628800]) (expect r0 'is3628800)))
+
+(begin
+   (let* ([r0 tailfact] [r1 100] [r2 1] [r0 (r0 r1 r2)] [r4 1000]) (check r4 'trivial))
+   (let* ([r0 1000]) (expect r0 'is1000)))

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+OUTPUT=$(uft ho-vo $1 | svm predef.vo -)
+echo $OUTPUT

@@ -1,0 +1,64 @@
+CS 106 Homework Submission
+
+What person or group is submitting this homework?
+
+  - Matt Zhou
+
+What work are you proud of?
+
+  - I am proud of making my translate and labelElim work (at least they seem to
+  work ok to me)
+
+What code would you like help improving?  Are there bugs you'd like
+help finding during code review?
+
+  - I would like some helping improving my labelElim function. It is quite
+  convoluted right now and I would like to make it cleaner. 
+
+What code, if any, would you especially like the course staff to
+review?  Why?
+
+  - I would like the course staff to take a quick look at my GRAMMAR in 
+  /uft/vs_files. In paticular, global assignment (<globals> := <reg>). I'm 
+  not sure if this is an okay way to set global values. Also, general feedback
+  of the grammar would be appreciated as well!
+
+In this course, all code may be shared freely.  Aside from code that
+is distributed with the assignment, does your submission contain any
+other code that you got from someone else?  If so, what code is it
+(file names and line numbers please) and who supplied it?
+
+  - worked on the lab portion of the assignment with Kresten.
+  All other code original. 
+
+In response to last week's code review, have you made any material
+changes?  What were they?  By file name and line number, where are
+they found in the code?  If you remember, who helped you during code
+review?
+
+  - Yes. I have made changes to the unparse function in file asmparse.sml 
+  line 338. Specifically, the indenting of the function bodies. This change
+  is attributed to Roger and Stephanie.
+  - Also changes to the literal parser in asmparse.sml line 98. The function
+  now returns NONE when encountering an input it can't parse. This change is
+  attributed to nr.
+
+
+We have a plenary code review tomorrow.  Are you willing to present
+(as a group, if applicable)?
+
+  - I would like to be in the audience this time.
+
+Supposing you are not selected to present at tomorrow's plenary code
+review, what code would you like to see presented?  What would you
+learn the most from?
+
+  - I would like to see how people cleaned up their parsers, and also 
+  the translate function. I think I would learn the most from seeing how
+  others used monads to propagate errors and transalte instructions in their
+  translate / labelElim function.  
+
+Again supposing you are not selected to present, who in your group is
+willing to serve on the review panel?
+
+  - I would like to be in the audience this time. 

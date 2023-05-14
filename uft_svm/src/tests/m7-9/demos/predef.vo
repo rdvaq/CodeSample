@@ -1,0 +1,838 @@
+.load module 180
+.load 0 function caar 1 3
+.at stdin 2 car 2 1
+.at stdin 2 car 0 2
+return 0
+setglobal 0 string 4 99 97 97 114
+.load 0 function cadr 1 3
+.at stdin 3 cdr 2 1
+.at stdin 3 car 0 2
+return 0
+setglobal 0 string 4 99 97 100 114
+.load 0 function cdar 1 3
+.at stdin 4 car 2 1
+.at stdin 4 cdr 0 2
+return 0
+setglobal 0 string 4 99 100 97 114
+.load 0 function cddr 1 3
+.at stdin 7 cdr 2 1
+.at stdin 7 cdr 0 2
+return 0
+setglobal 0 string 4 99 100 100 114
+.load 0 function caaar 1 5
+getglobal 2 string 4 99 97 97 114
+copy 3 1
+.at stdin 8 call 2 2 3
+.at stdin 8 car 0 2
+return 0
+setglobal 0 string 5 99 97 97 97 114
+.load 0 function caadr 1 5
+getglobal 2 string 4 99 97 100 114
+copy 3 1
+.at stdin 9 call 2 2 3
+.at stdin 9 car 0 2
+return 0
+setglobal 0 string 5 99 97 97 100 114
+.load 0 function cadar 1 5
+getglobal 2 string 4 99 100 97 114
+copy 3 1
+.at stdin 10 call 2 2 3
+.at stdin 10 car 0 2
+return 0
+setglobal 0 string 5 99 97 100 97 114
+.load 0 function caddr 1 5
+getglobal 2 string 4 99 100 100 114
+copy 3 1
+.at stdin 11 call 2 2 3
+.at stdin 11 car 0 2
+return 0
+setglobal 0 string 5 99 97 100 100 114
+.load 0 function cdaar 1 5
+getglobal 2 string 4 99 97 97 114
+copy 3 1
+.at stdin 12 call 2 2 3
+.at stdin 12 cdr 0 2
+return 0
+setglobal 0 string 5 99 100 97 97 114
+.load 0 function cdadr 1 5
+getglobal 2 string 4 99 97 100 114
+copy 3 1
+.at stdin 13 call 2 2 3
+.at stdin 13 cdr 0 2
+return 0
+setglobal 0 string 5 99 100 97 100 114
+.load 0 function cddar 1 5
+getglobal 2 string 4 99 100 97 114
+copy 3 1
+.at stdin 14 call 2 2 3
+.at stdin 14 cdr 0 2
+return 0
+setglobal 0 string 5 99 100 100 97 114
+.load 0 function cdddr 1 5
+getglobal 2 string 4 99 100 100 114
+copy 3 1
+.at stdin 15 call 2 2 3
+.at stdin 15 cdr 0 2
+return 0
+setglobal 0 string 5 99 100 100 100 114
+.load 0 function caaaar 1 5
+getglobal 2 string 5 99 97 97 97 114
+copy 3 1
+.at stdin 17 call 2 2 3
+.at stdin 17 car 0 2
+return 0
+setglobal 0 string 6 99 97 97 97 97 114
+.load 0 function caaadr 1 5
+getglobal 2 string 5 99 97 97 100 114
+copy 3 1
+.at stdin 18 call 2 2 3
+.at stdin 18 car 0 2
+return 0
+setglobal 0 string 6 99 97 97 97 100 114
+.load 0 function caadar 1 5
+getglobal 2 string 5 99 97 100 97 114
+copy 3 1
+.at stdin 19 call 2 2 3
+.at stdin 19 car 0 2
+return 0
+setglobal 0 string 6 99 97 97 100 97 114
+.load 0 function caaddr 1 5
+getglobal 2 string 5 99 97 100 100 114
+copy 3 1
+.at stdin 20 call 2 2 3
+.at stdin 20 car 0 2
+return 0
+setglobal 0 string 6 99 97 97 100 100 114
+.load 0 function cadaar 1 5
+getglobal 2 string 5 99 100 97 97 114
+copy 3 1
+.at stdin 21 call 2 2 3
+.at stdin 21 car 0 2
+return 0
+setglobal 0 string 6 99 97 100 97 97 114
+.load 0 function cadadr 1 5
+getglobal 2 string 5 99 100 97 100 114
+copy 3 1
+.at stdin 22 call 2 2 3
+.at stdin 22 car 0 2
+return 0
+setglobal 0 string 6 99 97 100 97 100 114
+.load 0 function caddar 1 5
+getglobal 2 string 5 99 100 100 97 114
+copy 3 1
+.at stdin 23 call 2 2 3
+.at stdin 23 car 0 2
+return 0
+setglobal 0 string 6 99 97 100 100 97 114
+.load 0 function cadddr 1 5
+getglobal 2 string 5 99 100 100 100 114
+copy 3 1
+.at stdin 24 call 2 2 3
+.at stdin 24 car 0 2
+return 0
+setglobal 0 string 6 99 97 100 100 100 114
+.load 0 function cdaaar 1 5
+getglobal 2 string 5 99 97 97 97 114
+copy 3 1
+.at stdin 26 call 2 2 3
+.at stdin 26 cdr 0 2
+return 0
+setglobal 0 string 6 99 100 97 97 97 114
+.load 0 function cdaadr 1 5
+getglobal 2 string 5 99 97 97 100 114
+copy 3 1
+.at stdin 27 call 2 2 3
+.at stdin 27 cdr 0 2
+return 0
+setglobal 0 string 6 99 100 97 97 100 114
+.load 0 function cdadar 1 5
+getglobal 2 string 5 99 97 100 97 114
+copy 3 1
+.at stdin 28 call 2 2 3
+.at stdin 28 cdr 0 2
+return 0
+setglobal 0 string 6 99 100 97 100 97 114
+.load 0 function cdaddr 1 5
+getglobal 2 string 5 99 97 100 100 114
+copy 3 1
+.at stdin 29 call 2 2 3
+.at stdin 29 cdr 0 2
+return 0
+setglobal 0 string 6 99 100 97 100 100 114
+.load 0 function cddaar 1 5
+getglobal 2 string 5 99 100 97 97 114
+copy 3 1
+.at stdin 30 call 2 2 3
+.at stdin 30 cdr 0 2
+return 0
+setglobal 0 string 6 99 100 100 97 97 114
+.load 0 function cddadr 1 5
+getglobal 2 string 5 99 100 97 100 114
+copy 3 1
+.at stdin 31 call 2 2 3
+.at stdin 31 cdr 0 2
+return 0
+setglobal 0 string 6 99 100 100 97 100 114
+.load 0 function cdddar 1 5
+getglobal 2 string 5 99 100 100 97 114
+copy 3 1
+.at stdin 32 call 2 2 3
+.at stdin 32 cdr 0 2
+return 0
+setglobal 0 string 6 99 100 100 100 97 114
+.load 0 function cddddr 1 5
+getglobal 2 string 5 99 100 100 100 114
+copy 3 1
+.at stdin 33 call 2 2 3
+.at stdin 33 cdr 0 2
+return 0
+setglobal 0 string 6 99 100 100 100 100 114
+.load 0 function list1 1 3
+loadliteral 2 emptylist
+.at stdin 35 cons 0 1 2
+return 0
+setglobal 0 string 5 108 105 115 116 49
+.load 0 function list2 2 5
+getglobal 3 string 5 108 105 115 116 49
+copy 4 2
+.at stdin 36 call 3 3 4
+.at stdin 36 cons 0 1 3
+return 0
+setglobal 0 string 5 108 105 115 116 50
+.load 0 function list3 3 6
+getglobal 4 string 5 108 105 115 116 50
+copy 5 2
+copy 6 3
+.at stdin 37 call 4 4 6
+.at stdin 37 cons 0 1 4
+return 0
+setglobal 0 string 5 108 105 115 116 51
+.load 0 function append 2 12
+.at stdin 40 null? 3 1
+if 3
+goto 8
+.at stdin 42 car 3 1
+getglobal 4 string 6 97 112 112 101 110 100
+.at stdin 42 cdr 5 1
+copy 6 2
+.at stdin 42 call 4 4 6
+.at stdin 42 cons 0 3 4
+return 0
+goto 1
+return 2
+setglobal 0 string 6 97 112 112 101 110 100
+.load 0 function revapp 2 10
+.at stdin 45 null? 3 1
+if 3
+goto 6
+getglobal 3 string 6 114 101 118 97 112 112
+.at stdin 47 cdr 4 1
+.at stdin 47 car 5 1
+.at stdin 47 cons 5 5 2
+.at stdin 47 tailcall 3 5
+goto 1
+return 2
+setglobal 0 string 6 114 101 118 97 112 112
+.load 0 function reverse 1 4
+getglobal 2 string 6 114 101 118 97 112 112
+copy 3 1
+loadliteral 4 emptylist
+.at stdin 49 tailcall 2 4
+setglobal 0 string 7 114 101 118 101 114 115 101
+.load 0 function nth 2 12
+loadliteral 3 0
+.at stdin 52 = 3 1 3
+if 3
+goto 6
+getglobal 3 string 3 110 116 104
+loadliteral 4 1
+.at stdin 54 - 4 1 4
+.at stdin 54 cdr 5 2
+.at stdin 54 tailcall 3 5
+goto 2
+.at stdin 53 car 0 2
+return 0
+setglobal 0 string 3 110 116 104
+.load 0 function getblockslot 2 4
+getglobal 3 string 3 110 116 104
+copy 4 1
+copy 5 2
+.at stdin 56 tailcall 3 5
+setglobal 0 string 12 103 101 116 98 108 111 99 107 115 108 111 116
+.load 0 function CAPTURED-IN 2 5
+getglobal 3 string 3 110 116 104
+loadliteral 4 1
+.at stdin 57 + 4 1 4
+copy 5 2
+.at stdin 57 tailcall 3 5
+setglobal 0 string 11 67 65 80 84 85 82 69 68 45 73 78
+.load 0 function list-of-length? 2 18
+loadliteral 3 0
+.at stdin 59 = 3 2 3
+if 3
+goto 12
+.at stdin 61 pair? 3 1
+if 3
+goto 3
+loadliteral 0 false
+return 0
+goto 5
+getglobal 3 string 15 108 105 115 116 45 111 102 45 108 101 110 103 116 104 63
+.at stdin 61 cdr 4 1
+loadliteral 5 1
+.at stdin 61 - 5 2 5
+.at stdin 61 tailcall 3 5
+goto 2
+.at stdin 60 null? 0 1
+return 0
+setglobal 0 string 15 108 105 115 116 45 111 102 45 108 101 110 103 116 104 63
+.load 0 function matches-vcon-arity? 3 20
+loadliteral 4 0
+.at stdin 63 = 4 3 4
+if 4
+goto 14
+getglobal 4 string 15 108 105 115 116 45 111 102 45 108 101 110 103 116 104 63
+copy 5 1
+loadliteral 6 1
+.at stdin 65 + 6 3 6
+.at stdin 65 call 4 4 6
+if 4
+goto 3
+loadliteral 0 false
+return 0
+goto 3
+.at stdin 66 car 4 1
+.at stdin 66 = 0 4 2
+return 0
+goto 2
+.at stdin 64 = 0 1 2
+return 0
+setglobal 0 string 19 109 97 116 99 104 101 115 45 118 99 111 110 45 97 114 105 116 121 63
+.load 0 function getblockslot 2 4
+getglobal 3 string 3 110 116 104
+copy 4 2
+copy 5 1
+.at stdin 67 tailcall 3 5
+setglobal 0 string 12 103 101 116 98 108 111 99 107 115 108 111 116
+.load 0 function and 2 5
+if 1
+goto 2
+return 1
+goto 1
+return 2
+setglobal 0 string 3 97 110 100
+.load 0 function or 2 5
+if 1
+goto 2
+return 2
+goto 1
+return 1
+setglobal 0 string 2 111 114
+.load 0 function not 1 7
+if 1
+goto 3
+loadliteral 0 true
+return 0
+goto 2
+loadliteral 0 false
+return 0
+setglobal 0 string 3 110 111 116
+.load 0 function atom? 1 10
+getglobal 2 string 2 111 114
+.at stdin 73 symbol? 3 1
+getglobal 4 string 2 111 114
+.at stdin 73 number? 5 1
+getglobal 6 string 2 111 114
+.at stdin 73 boolean? 7 1
+.at stdin 73 null? 8 1
+.at stdin 73 call 6 6 8
+.at stdin 73 call 4 4 6
+.at stdin 73 tailcall 2 4
+setglobal 0 string 5 97 116 111 109 63
+.load 0 function equal? 2 26
+getglobal 3 string 5 97 116 111 109 63
+copy 4 1
+.at stdin 76 call 3 3 4
+if 3
+goto 19
+getglobal 3 string 5 97 116 111 109 63
+copy 4 2
+.at stdin 78 call 3 3 4
+if 3
+goto 11
+getglobal 3 string 3 97 110 100
+getglobal 4 string 6 101 113 117 97 108 63
+.at stdin 80 car 5 1
+.at stdin 80 car 6 2
+.at stdin 80 call 4 4 6
+getglobal 5 string 6 101 113 117 97 108 63
+.at stdin 81 cdr 6 1
+.at stdin 81 cdr 7 2
+.at stdin 81 call 5 5 7
+.at stdin 80 tailcall 3 5
+goto 2
+loadliteral 0 false
+return 0
+goto 2
+.at stdin 77 = 0 1 2
+return 0
+setglobal 0 string 6 101 113 117 97 108 63
+.load 0 function make-alist-pair 2 4
+getglobal 3 string 5 108 105 115 116 50
+copy 4 1
+copy 5 2
+.at stdin 83 tailcall 3 5
+setglobal 0 string 15 109 97 107 101 45 97 108 105 115 116 45 112 97 105 114
+.load 0 function alist-pair-key 1 2
+.at stdin 84 car 0 1
+return 0
+setglobal 0 string 14 97 108 105 115 116 45 112 97 105 114 45 107 101 121
+.load 0 function alist-pair-attribute 1 3
+getglobal 2 string 4 99 97 100 114
+copy 3 1
+.at stdin 85 tailcall 2 3
+setglobal 0 string 20 97 108 105 115 116 45 112 97 105 114 45 97 116 116 114 105 98 117 116 101
+.load 0 function alist-first-key 1 3
+getglobal 2 string 14 97 108 105 115 116 45 112 97 105 114 45 107 101 121
+.at stdin 87 car 3 1
+.at stdin 87 tailcall 2 3
+setglobal 0 string 15 97 108 105 115 116 45 102 105 114 115 116 45 107 101 121
+.load 0 function alist-first-attribute 1 3
+getglobal 2 string 20 97 108 105 115 116 45 112 97 105 114 45 97 116 116 114 105 98 117 116 101
+.at stdin 88 car 3 1
+.at stdin 88 tailcall 2 3
+setglobal 0 string 21 97 108 105 115 116 45 102 105 114 115 116 45 97 116 116 114 105 98 117 116 101
+.load 0 function bind 3 34
+.at stdin 91 null? 4 3
+if 4
+goto 25
+getglobal 4 string 6 101 113 117 97 108 63
+copy 5 1
+getglobal 6 string 15 97 108 105 115 116 45 102 105 114 115 116 45 107 101 121
+copy 7 3
+.at stdin 93 call 6 6 7
+.at stdin 93 call 4 4 6
+if 4
+goto 9
+.at stdin 95 car 4 3
+getglobal 5 string 4 98 105 110 100
+copy 6 1
+copy 7 2
+.at stdin 95 cdr 8 3
+.at stdin 95 call 5 5 8
+.at stdin 95 cons 0 4 5
+return 0
+goto 7
+getglobal 4 string 15 109 97 107 101 45 97 108 105 115 116 45 112 97 105 114
+copy 5 1
+copy 6 2
+.at stdin 94 call 4 4 6
+.at stdin 94 cdr 5 3
+.at stdin 94 cons 0 4 5
+return 0
+goto 6
+getglobal 4 string 5 108 105 115 116 49
+getglobal 5 string 15 109 97 107 101 45 97 108 105 115 116 45 112 97 105 114
+copy 6 1
+copy 7 2
+.at stdin 92 call 5 5 7
+.at stdin 92 tailcall 4 5
+setglobal 0 string 4 98 105 110 100
+.load 0 function find 2 22
+.at stdin 97 null? 3 2
+if 3
+goto 17
+getglobal 3 string 6 101 113 117 97 108 63
+copy 4 1
+getglobal 5 string 15 97 108 105 115 116 45 102 105 114 115 116 45 107 101 121
+copy 6 2
+.at stdin 99 call 5 5 6
+.at stdin 99 call 3 3 5
+if 3
+goto 5
+getglobal 3 string 4 102 105 110 100
+copy 4 1
+.at stdin 101 cdr 5 2
+.at stdin 101 tailcall 3 5
+goto 3
+getglobal 3 string 21 97 108 105 115 116 45 102 105 114 115 116 45 97 116 116 114 105 98 117 116 101
+copy 4 2
+.at stdin 100 tailcall 3 4
+goto 2
+loadliteral 0 emptylist
+return 0
+setglobal 0 string 4 102 105 110 100
+.load 0 function o 2 5
+.load 3 function ; 1 5
+getclslot 2 0 0
+getclslot 3 0 1
+copy 4 1
+.at stdin 103 call 3 3 4
+.at stdin 103 tailcall 2 3
+mkclosure 3 3 2
+setclslot 3 1 0
+setclslot 3 2 1
+return 3
+setglobal 0 string 1 111
+.load 0 function curry 1 4
+.load 2 function ; 1 6
+getclslot 3 0 0
+.load 2 function ; 1 4
+getclslot 2 0 0
+getclslot 3 0 1
+copy 4 1
+.at stdin 105 tailcall 2 4
+mkclosure 2 2 2
+setclslot 2 3 0
+setclslot 2 1 1
+return 2
+mkclosure 2 2 1
+setclslot 2 1 0
+return 2
+setglobal 0 string 5 99 117 114 114 121
+.load 0 function uncurry 1 4
+.load 2 function ; 2 5
+getclslot 3 0 0
+copy 4 1
+.at stdin 106 call 3 3 4
+copy 4 2
+tailcall 3 4
+mkclosure 2 2 1
+setclslot 2 1 0
+return 2
+setglobal 0 string 7 117 110 99 117 114 114 121
+.load 0 function filter 2 23
+.at stdin 109 null? 3 2
+if 3
+goto 18
+copy 3 1
+.at stdin 111 car 4 2
+.at stdin 111 call 3 3 4
+if 3
+goto 5
+getglobal 3 string 6 102 105 108 116 101 114
+copy 4 1
+.at stdin 113 cdr 5 2
+.at stdin 113 tailcall 3 5
+goto 7
+.at stdin 112 car 3 2
+getglobal 4 string 6 102 105 108 116 101 114
+copy 5 1
+.at stdin 112 cdr 6 2
+.at stdin 112 call 4 4 6
+.at stdin 112 cons 0 3 4
+return 0
+goto 2
+loadliteral 0 emptylist
+return 0
+setglobal 0 string 6 102 105 108 116 101 114
+.load 0 function map 2 15
+.at stdin 116 null? 3 2
+if 3
+goto 10
+copy 3 1
+.at stdin 118 car 4 2
+.at stdin 118 call 3 3 4
+getglobal 4 string 3 109 97 112
+copy 5 1
+.at stdin 118 cdr 6 2
+.at stdin 118 call 4 4 6
+.at stdin 118 cons 0 3 4
+return 0
+goto 2
+loadliteral 0 emptylist
+return 0
+setglobal 0 string 3 109 97 112
+.load 0 function app 2 13
+.at stdin 121 null? 3 2
+if 3
+goto 8
+copy 3 1
+.at stdin 123 car 4 2
+.at stdin 123 call 3 3 4
+getglobal 3 string 3 97 112 112
+copy 4 1
+.at stdin 123 cdr 5 2
+.at stdin 123 tailcall 3 5
+goto 2
+loadliteral 0 false
+return 0
+setglobal 0 string 3 97 112 112
+.load 0 function exists? 2 18
+.at stdin 126 null? 3 2
+if 3
+goto 13
+copy 3 1
+.at stdin 128 car 4 2
+.at stdin 128 call 3 3 4
+if 3
+goto 5
+getglobal 3 string 7 101 120 105 115 116 115 63
+copy 4 1
+.at stdin 130 cdr 5 2
+.at stdin 130 tailcall 3 5
+goto 2
+loadliteral 0 true
+return 0
+goto 2
+loadliteral 0 false
+return 0
+setglobal 0 string 7 101 120 105 115 116 115 63
+.load 0 function all? 2 18
+.at stdin 132 null? 3 2
+if 3
+goto 13
+copy 3 1
+.at stdin 134 car 4 2
+.at stdin 134 call 3 3 4
+if 3
+goto 3
+loadliteral 0 false
+return 0
+goto 4
+getglobal 3 string 4 97 108 108 63
+copy 4 1
+.at stdin 135 cdr 5 2
+.at stdin 135 tailcall 3 5
+goto 2
+loadliteral 0 true
+return 0
+setglobal 0 string 4 97 108 108 63
+.load 0 function foldr 3 13
+.at stdin 139 null? 4 3
+if 4
+goto 9
+copy 4 1
+.at stdin 141 car 5 3
+getglobal 6 string 5 102 111 108 100 114
+copy 7 1
+copy 8 2
+.at stdin 141 cdr 9 3
+.at stdin 141 call 6 6 9
+.at stdin 141 tailcall 4 6
+goto 1
+return 2
+setglobal 0 string 5 102 111 108 100 114
+.load 0 function foldl 3 13
+.at stdin 143 null? 4 3
+if 4
+goto 9
+getglobal 4 string 5 102 111 108 100 108
+copy 5 1
+copy 6 1
+.at stdin 145 car 7 3
+copy 8 2
+.at stdin 145 call 6 6 8
+.at stdin 145 cdr 7 3
+.at stdin 145 tailcall 4 7
+goto 1
+return 2
+setglobal 0 string 5 102 111 108 100 108
+loadliteral 0 10
+setglobal 0 string 7 110 101 119 108 105 110 101
+loadliteral 0 40
+setglobal 0 string 10 108 101 102 116 45 114 111 117 110 100
+loadliteral 0 32
+setglobal 0 string 5 115 112 97 99 101
+loadliteral 0 41
+setglobal 0 string 11 114 105 103 104 116 45 114 111 117 110 100
+loadliteral 0 59
+setglobal 0 string 9 115 101 109 105 99 111 108 111 110
+loadliteral 0 123
+setglobal 0 string 10 108 101 102 116 45 99 117 114 108 121
+loadliteral 0 39
+setglobal 0 string 9 113 117 111 116 101 109 97 114 107
+loadliteral 0 125
+setglobal 0 string 11 114 105 103 104 116 45 99 117 114 108 121
+loadliteral 0 91
+setglobal 0 string 11 108 101 102 116 45 115 113 117 97 114 101
+loadliteral 0 93
+setglobal 0 string 12 114 105 103 104 116 45 115 113 117 97 114 101
+.load 0 function <= 2 3
+.at stdin 154 > 3 1 2
+.at stdin 154 not 0 3
+return 0
+setglobal 0 string 2 60 61
+.load 0 function >= 2 3
+.at stdin 155 < 3 1 2
+.at stdin 155 not 0 3
+return 0
+setglobal 0 string 2 62 61
+.load 0 function != 2 3
+.at stdin 156 = 3 1 2
+.at stdin 156 not 0 3
+return 0
+setglobal 0 string 2 33 61
+.load 0 function max 2 6
+.at stdin 158 > 3 1 2
+if 3
+goto 2
+return 2
+goto 1
+return 1
+setglobal 0 string 3 109 97 120
+.load 0 function min 2 6
+.at stdin 159 < 3 1 2
+if 3
+goto 2
+return 2
+goto 1
+return 1
+setglobal 0 string 3 109 105 110
+.load 0 function negated 1 3
+loadliteral 2 0
+.at stdin 161 - 0 2 1
+return 0
+setglobal 0 string 7 110 101 103 97 116 101 100
+.load 0 function mod 2 4
+.at stdin 162 idiv 3 1 2
+.at stdin 162 * 3 2 3
+.at stdin 162 - 0 1 3
+return 0
+setglobal 0 string 3 109 111 100
+.load 0 function gcd 2 13
+loadliteral 3 0
+.at stdin 163 = 3 2 3
+if 3
+goto 8
+getglobal 3 string 3 103 99 100
+copy 4 2
+getglobal 5 string 3 109 111 100
+copy 6 1
+copy 7 2
+.at stdin 163 call 5 5 7
+.at stdin 163 tailcall 3 5
+goto 1
+return 1
+setglobal 0 string 3 103 99 100
+.load 0 function lcm 2 14
+loadliteral 3 0
+.at stdin 164 = 3 1 3
+if 3
+goto 8
+getglobal 3 string 3 103 99 100
+copy 4 1
+copy 5 2
+.at stdin 164 call 3 3 5
+.at stdin 164 idiv 3 2 3
+.at stdin 164 * 0 1 3
+return 0
+goto 2
+loadliteral 0 0
+return 0
+setglobal 0 string 3 108 99 109
+.load 0 function list4 4 7
+getglobal 5 string 5 108 105 115 116 51
+copy 6 2
+copy 7 3
+copy 8 4
+.at stdin 166 call 5 5 8
+.at stdin 166 cons 0 1 5
+return 0
+setglobal 0 string 5 108 105 115 116 52
+.load 0 function list5 5 8
+getglobal 6 string 5 108 105 115 116 52
+copy 7 2
+copy 8 3
+copy 9 4
+copy 10 5
+.at stdin 167 call 6 6 10
+.at stdin 167 cons 0 1 6
+return 0
+setglobal 0 string 5 108 105 115 116 53
+.load 0 function list6 6 9
+getglobal 7 string 5 108 105 115 116 53
+copy 8 2
+copy 9 3
+copy 10 4
+copy 11 5
+copy 12 6
+.at stdin 168 call 7 7 12
+.at stdin 168 cons 0 1 7
+return 0
+setglobal 0 string 5 108 105 115 116 54
+.load 0 function list7 7 10
+getglobal 8 string 5 108 105 115 116 54
+copy 9 2
+copy 10 3
+copy 11 4
+copy 12 5
+copy 13 6
+copy 14 7
+.at stdin 169 call 8 8 14
+.at stdin 169 cons 0 1 8
+return 0
+setglobal 0 string 5 108 105 115 116 55
+.load 0 function list8 8 11
+getglobal 9 string 5 108 105 115 116 55
+copy 10 2
+copy 11 3
+copy 12 4
+copy 13 5
+copy 14 6
+copy 15 7
+copy 16 8
+.at stdin 170 call 9 9 16
+.at stdin 170 cons 0 1 9
+return 0
+setglobal 0 string 5 108 105 115 116 56
+.load 0 function assoc 2 20
+.at stdin 172 null? 3 2
+if 3
+goto 15
+.at stdin 174 car 3 2
+.at stdin 175 cdr 4 2
+getglobal 5 string 6 101 113 117 97 108 63
+copy 6 1
+.at stdin 176 car 7 3
+.at stdin 176 call 5 5 7
+if 5
+goto 5
+getglobal 5 string 5 97 115 115 111 99
+copy 6 1
+copy 7 4
+.at stdin 178 tailcall 5 7
+goto 1
+return 3
+goto 2
+loadliteral 0 false
+return 0
+setglobal 0 string 5 97 115 115 111 99
+.load 0 function Table.new 0 4
+getglobal 1 string 3 110 105 108
+loadliteral 2 emptylist
+.at stdin 181 cons 0 1 2
+return 0
+setglobal 0 string 9 84 97 98 108 101 46 110 101 119
+.load 0 function Table.get 2 11
+getglobal 3 string 5 97 115 115 111 99
+copy 4 2
+.at stdin 184 cdr 5 1
+.at stdin 184 call 3 3 5
+if 3
+goto 3
+getglobal 0 string 3 110 105 108
+return 0
+goto 2
+.at stdin 186 cdr 0 3
+return 0
+setglobal 0 string 9 84 97 98 108 101 46 103 101 116
+.load 0 function Table.put 3 17
+getglobal 4 string 5 97 115 115 111 99
+copy 5 2
+.at stdin 190 cdr 6 1
+.at stdin 190 call 4 4 6
+if 4
+goto 7
+getglobal 5 string 8 115 101 116 45 99 100 114 33
+copy 6 1
+.at stdin 193 cons 7 2 3
+.at stdin 193 cdr 8 1
+.at stdin 193 cons 7 7 8
+.at stdin 193 tailcall 5 7
+goto 4
+getglobal 5 string 8 115 101 116 45 99 100 114 33
+copy 6 4
+copy 7 3
+.at stdin 192 tailcall 5 7
+setglobal 0 string 9 84 97 98 108 101 46 112 117 116

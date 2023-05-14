@@ -1,0 +1,63 @@
+CS 106 Homework Submission
+
+What person or group is submitting this homework?
+
+  - Matt Zhou
+
+What work are you proud of?
+
+  - Proud of being able to translate fo -> vo
+
+What code would you like help improving?  Are there bugs you'd like
+help finding during code review?
+
+  - I would like to imporve/find bugs in my nbRegsWith function and the
+  translation of the DEFINE form
+
+What code, if any, would you especially like the course staff to
+review?  Why?
+
+  - I would like the course staff to review the way I deal with function
+  names in vmrun.c. 
+  In the Call and Tailcall opcodes, I want to give the user the name of 
+  the function that fails the arity check (the arity check occurs at line 188).
+  I uses the 'funname' variable I get from lastglobalset as the name of the
+  function. Is that an acceptable way of getting the name of the function?
+  Alternatively, I think I could try and match the function value in 
+  the global table and use that to index into the array that holds global_names,
+  but i think using lastglobalset is aslo ok?
+
+In this course, all code may be shared freely.  Aside from code that
+is distributed with the assignment, does your submission contain any
+other code that you got from someone else?  If so, what code is it
+(file names and line numbers please) and who supplied it?
+
+  - All code original 
+
+In response to last week's code review, have you made any material
+changes?  What were they?  By file name and line number, where are
+they found in the code?  If you remember, who helped you during code
+review?
+
+  - Not a lot of changes
+
+
+We have a plenary code review tomorrow.  Are you willing to present
+(as a group, if applicable)?
+
+  - Yes
+
+Supposing you are not selected to present at tomorrow's plenary code
+review, what code would you like to see presented?  What would you
+learn the most from?
+
+  - I would like to see how people tackled translating the LET,
+  FUNCALL, and DEFINE expressions.
+  I am also interested in hearing about other people's debugging experience
+  
+
+Again supposing you are not selected to present, are you willing to
+serve on the review panel? (Or if there are more than one of you, who
+is willing to serve?)
+
+  - Yes

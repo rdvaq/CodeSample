@@ -1,0 +1,30 @@
+<comment>   ::= from ; to end-of-line
+<reserved>  ::= if | goto | hash | .loadfun | el | halt | call | return | tailcall
+<s-effect>  ::= print | printu | println | error
+<label>     ::= strings except <reserved> and <reg> followed by :
+<reg>       ::= rN where N is a decial number
+<globals>   ::= % followed by any name
+<string>    ::= c style strings 
+<k>         ::= integer | <string> | true | false | emptylist | nil
+<rvalue>    ::= <reg> | <k> | <label> | <globals>
+<relop>     ::= != | == | < | > | <= | >= 
+<binop>     ::= + | - | * | / | idiv | cons
+<predicate> ::= function? | pair? | symbol? | number? | boolean? | null? | nil?
+<unop>      ::= - | ~ | ! | <predicate> | car | cdr 
+<instr>     ::= <reg> := <rvalue>
+             |  <reg> := <rvalue> <binop> <rvalue>
+             |  <reg> := <rvalue> <relop> <rvalue>
+             |  <reg> := <unop> <rvalue>
+             |  <s-effect> <reg>
+             |  .loadfun <reg> integer {<instr>} el 
+             |  goto <label>
+             |  if <reg> goto <label>
+             |  check <reg> <k>
+             |  expect <reg> <k>
+             |  <globals> := <reg>
+             |  call <reg> (<reg>, ..., <reg>)
+             |  tailcall <reg> (<reg>, ..., <reg>)
+             |  return <reg>
+             |  halt
+<line>      ::= [<instr>]
+<program>   ::= {<line> (<comment> | newline)}

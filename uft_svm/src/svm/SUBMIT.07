@@ -1,0 +1,63 @@
+CS 106 Homework Submission
+
+What person or group is submitting this homework?
+
+  - Matt Zhou
+
+What work are you proud of?
+
+  - proud of having a more concrete understanding of tailcalls
+
+What code would you like help improving?  Are there bugs you'd like
+help finding during code review?
+
+  - I would like to improve my implementation of the call and tailcall 
+  instruction. In paticular, I want to make sure that I am catching all 
+  the checked runtime errors correctly. 
+
+What code, if any, would you especially like the course staff to
+review?  Why?
+
+  - in file uft/asmparse.sml line 225 & 226, I define two parsers, one that
+  parses a call to a function that contains args and one that parses a function
+  call with no args. Their instruction format is a bit different, but I just
+  wonder if there's a more elegant way to do the parsing and combine the two 
+  parsers.
+
+In this course, all code may be shared freely.  Aside from code that
+is distributed with the assignment, does your submission contain any
+other code that you got from someone else?  If so, what code is it
+(file names and line numbers please) and who supplied it?
+
+  - all code original 
+
+In response to last week's code review, have you made any material
+changes?  What were they?  By file name and line number, where are
+they found in the code?  If you remember, who helped you during code
+review?
+
+  - in student-2023s/src/uft/scm_files/kntest.scm line 63,
+  stephanie and vivian suggested using the function? predicate to test the 
+  lambda I wrote instead of a trival check-expect I had before. The code 
+  was changed accordingly. 
+
+
+We have a plenary code review tomorrow.  Are you willing to present
+(as a group, if applicable)?
+
+  - yes
+
+Supposing you are not selected to present at tomorrow's plenary code
+review, what code would you like to see presented?  What would you
+learn the most from?
+
+  - I would like to see the .vs tests that people came up with. I wonder
+  if other people also expanded their parsers with the ability to parse
+  call, return, and tailcall. If they did, then a look at the parser would be 
+  nice. Going over their debuggin process would be helpful too. 
+
+Again supposing you are not selected to present, are you willing to
+serve on the review panel? (Or if there are more than one of you, who
+is willing to serve?)
+
+  - yes

@@ -1,0 +1,72 @@
+CL
+
+kn form 
+    FUNCODE of 'a list * 'a exp
+    FUNCODE of name * 'a list * 'a exp
+
+
+asm code 
+    .loadfun <reg> integer {<instr>} el
+    .loadfun <reg> integer funname {<instr>} el
+
+obj code 
+    .load reg function arity num_instructions
+        insturcitons
+    .load reg function funname arity num_instructions
+        insturcitons        
+    
+svm loader
+    in VMFunction, add name field
+    at load time, load name into value 
+
+vmrun
+    trace up the activation record stack 
+
+
+MARK of srcloc * exp                            | HO
+        ^                                       | FO
+        Begining & End position                 | KN
+
+you_are_here ?                                  | VS
+                                                | VO        
+Idea:
+
+function value gets an extra field:
+array of locations that's the same length as the number of instructions 
+in the function
+
+Since I only have locations for call sites right now,
+when running the caller function, I can index into the 
+location array of the caller to figure out where the callee is 
+called 
+
+Currently vo code is pretty werid
+
+when loadliteral, so name -1 space filler is generated
+otherwise, all vo ins are interleaved with name -1 filler execpt at call sites
+
+Norman:
+
+add a tag to instructions at the start 
+
+[at INT STRING] OPCODE R R [R | LIT]
+.at
+Name meta_filename(struct VM *vm, uint32_t)
+int meta_linenumber(struct VM *vm, uint32_t)
+uint32_t coded_source_location(struct VM *vm, VMString *filename, int line_number);
+^
+can load location into a literal pool?
+
+uint32_t no_source_location;
+
+
+changed lines from ioutil 
+  (* val lines  : TextIO.instream -> string list *)
+  val lines  : string -> TextIO.instream -> string located list
+
+  then changed Sx and Sxlex 
+  and asmlex 
+  to match types
+
+
+  added mark form scheme and related forms

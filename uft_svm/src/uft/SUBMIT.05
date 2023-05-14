@@ -1,0 +1,61 @@
+CS 106 Homework Submission
+
+What person or group is submitting this homework?
+
+  - Matt Zhou
+
+What work are you proud of?
+
+  - Proud of somewhat understanding the function comps in uft.sml 
+
+What code would you like help improving?  Are there bugs you'd like
+help finding during code review?
+
+  - I would like to improve my exp function in knProject.sml, in paticular, 
+  I want to get better error msgs out of the function
+
+What code, if any, would you especially like the course staff to
+review?  Why?
+
+  - I would like the course staff to review my exp helper function in 
+  knembed.sml. In paticular, I am not exactly sure if the way I handled the 
+  VMPOL form is acceptable - in the "setglobal" case, alist should just contain
+  one element, but I'm not sure if the way i extract the element is ok; In 
+  the general apply case, I tag the literal to the end of the list with @,
+  maybe there are better way of doing this?
+
+In this course, all code may be shared freely.  Aside from code that
+is distributed with the assignment, does your submission contain any
+other code that you got from someone else?  If so, what code is it
+(file names and line numbers please) and who supplied it?
+
+  - All code original
+
+In response to last week's code review, have you made any material
+changes?  What were they?  By file name and line number, where are
+they found in the code?  If you remember, who helped you during code
+review?
+
+  - assembler.sml line 61, mondaic lift, credit to vivian 
+
+
+We have a plenary code review tomorrow.  Are you willing to present
+(as a group, if applicable)?
+
+  - yes
+
+Supposing you are not selected to present at tomorrow's plenary code
+review, what code would you like to see presented?  What would you
+learn the most from?
+
+  - I would like to see the embedding of kn expressions to VScheme defs be
+  presented
+
+Again supposing you are not selected to present, are you willing to
+serve on the review panel? (Or if there are more than one of you, who
+is willing to serve?)
+
+  - yes
+
+
+Note: all scm testfile are in src/uft/scm_files/

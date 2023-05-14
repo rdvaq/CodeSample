@@ -1,0 +1,71 @@
+CS 106 Homework Submission
+
+What person or group is submitting this homework?
+
+  - Matt Zhou
+
+What work are you proud of?
+
+  - proud of being able to convert lambdas to closures
+
+What code would you like help improving?  Are there bugs you'd like
+help finding during code review?
+
+  - Everything (jk)
+  I would like to take a look at the exp function in knormalize.sml
+  sepecially the closure related forms.
+  Also, I would like to see how people dealt with the letrec form 
+  in knrename. Renaming that was especially challenging for me. 
+
+What code, if any, would you especially like the course staff to
+review?  Why?
+
+  - I would like the course staff to look at my CLOSURE & LETREC  
+  normalization in knormalize.sml line 115 & line 117.
+  Specifically, for one of the forms, I had bindSmallest as the normalization
+  function, and it ended up rebinding captured varaibles that are in registers
+  to different register that doesn't make sense in the outer scope:
+    i.e. (let ([r0 (lambda (r1) 
+    ;;              (let ([r4 r2]) 
+    ;;                (letrec  ([r2 
+    ;;                   (mkclosure ....
+  I corrected this by using bindAnyReg so no werid let binding in generated.
+  So I guess one should only use bindAnyReg and never bindSmallest when 
+  normalizing captured variables with nbRegsWith, don't know if this conclusion
+  is correct though. 
+
+
+In this course, all code may be shared freely.  Aside from code that
+is distributed with the assignment, does your submission contain any
+other code that you got from someone else?  If so, what code is it
+(file names and line numbers please) and who supplied it?
+
+  - All code original 
+
+In response to last week's code review, have you made any material
+changes?  What were they?  By file name and line number, where are
+they found in the code?  If you remember, who helped you during code
+review?
+
+  - Yes, knormalize.sml line 98. Was generating extra code when 
+  normalizing while, but now fixed, thanks to Dennis
+
+
+We have a plenary code review tomorrow.  Are you willing to present
+(as a group, if applicable)?
+
+  - Yes
+
+Supposing you are not selected to present at tomorrow's plenary code
+review, what code would you like to see presented?  What would you
+learn the most from?
+
+  - I would like to see the normalization of closure related forms 
+  in knormalize. A quick look at the exp function in closure-convert.sml
+  and code generation for closure forms in codegen.sml would be nice too. 
+
+Again supposing you are not selected to present, are you willing to
+serve on the review panel? (Or if there are more than one of you, who
+is willing to serve?)
+
+  - Yes

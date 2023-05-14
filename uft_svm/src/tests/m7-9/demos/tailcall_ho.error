@@ -1,0 +1,13 @@
+(define child3 (x)
+    (car x))
+
+(define child2 (x)
+    (child3 x))
+
+(define child1 (x)
+    (child2 x))
+
+(define mother (x)
+    (child1 x))
+
+(mother 5)
