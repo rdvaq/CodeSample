@@ -19,6 +19,7 @@ UFT & SVM structure overview
 ![image](./overviewppt.jpg)
 
 To see a whole presentation on the topic, please see the pdf in the directory
+
 To run the uft:
 
     - uft <inlang>-<outlang> <file> 
