@@ -4,11 +4,11 @@ by Matt & Chami
 
 ## Baseline Features: 
 
-- Support for basic GET method and caching (similar to assignment 1)
-- Handle the CONNECT method of HTTP (this will allow your proxy to support HTTPS as well).
+- Support for basic GET method and caching
+- Handle the CONNECT method of HTTP.
 - Ability to handle multiple clients at the same time. 
 - Error handling
-- Basic Performance Testing and Optimizations: Your proxy’s performance should 
+- Basic Performance Testing and Optimizations: Proxy’s performance should 
   be comparable to the baseline (without using a proxy). 
 
 
