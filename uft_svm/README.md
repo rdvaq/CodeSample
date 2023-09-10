@@ -8,7 +8,9 @@ In the repository, you'll find these directories:
 
     - `src/svm` contains source code for the Simple Virtual Machine.
     - `src/uft` contains source code for the Universal Forward Translator.
+    - `src/tests` contains tests for the SVM & UFT
 
+  - `bin` contains compiled binaries
 
 ----------------------------------------------------------------------------------
 
@@ -17,7 +19,6 @@ UFT & SVM structure overview
 ![image](./overviewppt.jpg)
 
 To see a whole presentation on the topic, please see the pdf in the directory
-
 To run the uft:
 
     - uft <inlang>-<outlang> <file> 
