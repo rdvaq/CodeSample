@@ -4,6 +4,7 @@
 *.ui
 *.uo
 /build/*
+/bin/*
 /bin/svm
 /bin/svm-dis
 /bin/svm-opcodes
@@ -15,4 +16,4 @@
 /bin/uft.opt
 /bin/uft
 /src/uft/*.mlb
-/bin
+
