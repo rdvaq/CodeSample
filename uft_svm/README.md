@@ -1,11 +1,10 @@
-This is the student-facing code repository for CS 106: 
 Simple Virtual Machines and Language Translation.
 
 ----------------------------------------------------------------------------------
 
 In the repository, you'll find these directories:
 
-  - `bin` holds compiled binaries and also scripts.  Add it to your `$PATH`.
+  - `bin` holds compiled binaries and also scripts. 
 
   - `build` is a holding area for compiled files (`.o` and that ilk).
     If you are having trouble compiling, it is safe to remove
@@ -13,11 +12,16 @@ In the repository, you'll find these directories:
 
   - `src` contains sources that I provide and that you'll edit:
 
-    - `src/svm` contains starter source code for your Simple Virtual Machine.
-    - `src/uft` contains starter source code for your Universal Forward Translator.
+    - `src/svm` contains source code for the Simple Virtual Machine.
+    - `src/uft` contains source code for the Universal Forward Translator.
 
 
 ----------------------------------------------------------------------------------
+
+Overview:
+
+![image](./overviewppt.jpg)
+
 
 To run the uft:
 
